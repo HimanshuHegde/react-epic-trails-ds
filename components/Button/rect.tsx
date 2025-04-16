@@ -3,17 +3,19 @@ import React, { useState } from "react";
 import { ButtonProps } from "./Button.type";
 
 const RectButton = ({
-  label = "Button",
+  label = "",
   state = "default",
   size = "medium",
   disabled,
   background,
-  variant = "primary", 
+  variant = "primary",
+  children, 
   ...props
 }: ButtonProps) => {
   const buttonVariant = variant;
 
   const sizes = {
+    fit: "w-fit h-fit p-[10px]",
     small: "min-w-[80px] h-fit p-[10px]", 
     medium: "min-w-[120px] h-fit p-[10px]", 
     large: "min-w-[160px] h-fit p-[15px]", 
@@ -66,7 +68,7 @@ const RectButton = ({
         </div>
       ) : (
         <span className={`${state === "disabled" ? "text-[#868686]" : buttonVariant === "primary" ? "text-white" : "text-black"}`}>
-          {label}
+          {children||label}
         </span>
       )}
     </button>

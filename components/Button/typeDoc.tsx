@@ -26,6 +26,7 @@ import { TypeDocsProps } from "./Button.type";
   }, [state]);
 
   const sizes = {
+    fit: "w-fit h-fit p-[10px]",
     small: "w-3/4 min-w-[80px] p-[10px]",
     medium: "w-full min-w-[120px] p-[10px]",
     large: "w-full min-w-[160px] p-[15px]",

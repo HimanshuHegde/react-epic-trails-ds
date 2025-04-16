@@ -20,6 +20,7 @@ const Icon = ({
   const buttonVariant = variant;
 
   const sizes = {
+    fit: "w-fit h-fit p-[10px]",
     small: "min-w-[169px] h-fit p-[10px]", 
     medium: "min-w-[270px] h-fit p-[10px]", 
     large: "min-w-[270px] h-fit p-[15px]", 
