@@ -1,0 +1,53 @@
+import { ReactNode } from "react";
+
+interface TimelineStepProps {
+    children: ReactNode;
+    className?: string;
+    completed?: boolean;
+    current?: boolean;
+    activeColor?: string;
+    inactiveColor?: string;
+}
+
+export function TimelineStep({
+    children,
+    className = "",
+    completed = false,
+    current = false,
+    activeColor = "#22c55e",
+    inactiveColor = "#d1d5db",
+}: TimelineStepProps) {
+    return (
+        <div className={`flex flex-col items-center ${className}`}>
+            <div
+                className="w-6 h-6 rounded-full z-10 flex items-center justify-center border-2"
+                style={{
+                    backgroundColor: completed ? activeColor : "white",
+                    borderColor: completed ? activeColor : inactiveColor,
+                }}
+            >
+                {completed && (
+                    <svg
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M5 13l4 4L19 7"
+                        ></path>
+                    </svg>
+                )}
+                {current && !completed && (
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                )}
+            </div>
+
+            <div className="mt-2 text-center">{children}</div>
+        </div>
+    );
+}
