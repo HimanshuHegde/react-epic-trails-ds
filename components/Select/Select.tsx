@@ -61,7 +61,7 @@ export const SelectTrigger = ({
     return (
         <button
             onClick={() => ctx.setIsOpen(!ctx.isOpen)}
-            className={`flex items-center justify-between border border-zinc-700 bg-zinc-900 text-white px-3 py-2 rounded-md shadow-sm focus:outline-none ${className}`}
+            className={`flex items-center justify-between border border-zinc-700 bg-zinc-900 text-white px-3 py-2 rounded-md shadow-sm focus:outline-none ${className} mt-2`}
             {...rest}
         >
             {children}
@@ -85,48 +85,65 @@ export const SelectValue = ({ placeholder }: { placeholder?: string }) => {
 
 export const SelectContent = ({
     children,
-    className = '',
-  }: {
+    className = "",
+}: {
     children: ReactNode;
     className?: string;
-  }) => {
+}) => {
     const ctx = useContext(SelectContext);
     const contentRef = useRef<HTMLDivElement>(null);
     const triggerRef = useRef<HTMLElement | null>(null);
-  
-    const [placement, setPlacement] = useState<'bottom' | 'top'>('bottom');
-  
+    const [placement, setPlacement] = useState<"bottom" | "top">("bottom");
+
+    // 🧠 Positioning logic
     useEffect(() => {
-      const triggerEl = contentRef.current?.parentElement?.querySelector('button');
-      if (triggerEl) {
-        triggerRef.current = triggerEl;
-        const rect = triggerEl.getBoundingClientRect();
-        const spaceBelow = window.innerHeight - rect.bottom;
-        const estimatedHeight = 200; // Adjust as needed
-  
-        if (spaceBelow < estimatedHeight) {
-          setPlacement('top');
-        } else {
-          setPlacement('bottom');
+        const triggerEl =
+            contentRef.current?.parentElement?.querySelector("button");
+        if (triggerEl) {
+            triggerRef.current = triggerEl;
+            const rect = triggerEl.getBoundingClientRect();
+            const spaceBelow = window.innerHeight - rect.bottom;
+            const estimatedHeight = 200; // You can make this dynamic if needed
+
+            setPlacement(spaceBelow < estimatedHeight ? "top" : "bottom");
         }
-      }
     }, [ctx?.isOpen]);
-  
+
+    // 🧠 Click outside to close
+    useEffect(() => {
+        function handleClickOutside(e: MouseEvent) {
+            if (
+                contentRef.current &&
+                !contentRef.current.contains(e.target as Node) &&
+                !triggerRef.current?.contains(e.target as Node)
+            ) {
+                ctx?.setIsOpen(false);
+            }
+        }
+
+        if (ctx?.isOpen) {
+            document.addEventListener("mousedown", handleClickOutside);
+        }
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ctx?.isOpen]);
+
     if (!ctx?.isOpen) return null;
-  
+
     return (
-      <div
-        ref={contentRef}
-        className={`absolute z-50 w-full rounded-md bg-zinc-900 border border-zinc-700 text-white shadow-lg transition-all duration-150
-          ${placement === 'bottom' ? 'top-full mt-2' : 'bottom-full mb-2'}
-          ${className}
-        `}
-      >
-        {children}
-      </div>
+        <div
+            ref={contentRef}
+            className={`absolute z-50 w-full max-h-52 overflow-auto rounded-md bg-zinc-900 border border-zinc-700 text-white shadow-lg transition-all duration-150
+        ${placement === "bottom" ? "top-full mt-1" : "bottom-full mb-1"}
+        ${className}
+      `}
+        >
+            {children}
+        </div>
     );
-  };
-  
+};
 
 export const SelectGroup = ({ children }: { children: ReactNode }) => {
     return <div className="p-1">{children}</div>;
