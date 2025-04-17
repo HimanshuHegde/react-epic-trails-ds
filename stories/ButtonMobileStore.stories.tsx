@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { ButtonMobileStore } from "@/components/ButtonMobileStore"; // Adjust the import path accordingly
 
 const meta = {
-    title: "Example/ButtonMobileStore",
+    title: "Components/ButtonMobileStore",
     component: ButtonMobileStore,
     tags: ["autodocs"],
     parameters: {

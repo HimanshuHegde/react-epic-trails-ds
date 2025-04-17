@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumbs, BreadcrumbsItem } from "@/components/Breadcrumbs";
 
 const meta = {
-    title: "Example/Breadcrumbs",
+    title: "Components/Breadcrumbs",
     component: Breadcrumbs,
     tags: ["autodocs"],
     parameters: {

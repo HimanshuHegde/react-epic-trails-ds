@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import ButtonGroup from "@/components/ButtonGroup/ButtonGroup"; // adjust path if necessary
 
 const meta = {
-    title: "Example/ButtonGroup",
+    title: "Components/ButtonGroup",
     component: ButtonGroup,
     tags: ["autodocs"],
     parameters: {
