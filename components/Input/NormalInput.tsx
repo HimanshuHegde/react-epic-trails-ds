@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { IoCloseCircle, IoAlertCircle, IoCheckmarkCircle } from "react-icons/io5";
 import { NInputProp } from "./Input.type";
+import Truncate from "../Truncate/Truncate";
 const Sizes = {
   small: "w-[375px] h-[36px]",
   medium: "w-[375px] h-[48px]",
   large: "w-[375px] h-[56px]",
+  fit: "w-fit h-fit",
 };
 
 export default function NormalText({
@@ -15,10 +17,12 @@ export default function NormalText({
   State = "Default",
   value = "",
   curved = false,
+  id='file-input',
   ...props
 }: NInputProp) {
   const [inputValue, setInputValue] = useState(value||props.defaultValue);
-  const [isFocused, setIsFocused] = useState(false);
+  const [inputFile, setInputFile] = useState<string | null>(null);
+  const [isFocused, setIsFocused] = useState(false);  
   const handleInputChange = (text: string) => {
     setInputValue(text);
   };
@@ -59,15 +63,33 @@ export default function NormalText({
       ) : null}
       <div className={`relative ${Sizes[Size]} `}>
         <input 
+        {...props}  
           
-          className={`bg-[#e8e8e8] p-[8px] placeholder:text-inputPlaceholder outline-none pr-[40px] border-[3px] ${getBorderColor()} ${curved && 'rounded-md'} ${Sizes[Size]}`} 
+          className={`bg-[#e8e8e8] p-[8px] placeholder:text-inputPlaceholder outline-none pr-[40px] border-[3px]  ${props.type=='file'&&'hidden'} ${getBorderColor()} ${curved && 'rounded-md'} ${Sizes[Size]} ${props.className}`} 
           disabled={["Disabled", "ViewOnly"].includes(State)} 
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-          {...props}  
-          onChange={(e) => handleInputChange(e.target.value)}
+          onFocus={(e) => {setIsFocused(true)
+          props.onFocus?.(e);
+          }}
+          onBlur={(e) => {setIsFocused(false)
+          props.onBlur?.(e);
+          }}
+          
+          onChange={(e) => {handleInputChange(e.target.value)
+          setInputFile(e.target.files ? e.target.files[0].name: null);
+          props.onChange?.(e);
+          }}
           value={inputValue}
-        />  
+          id={id}
+        />
+        {props.type === "file" && (
+          <label
+            htmlFor={id}
+            className={`bg-[#e8e8e8] p-[8px] placeholder:text-inputPlaceholder outline-none  border-[3px] w-fit ${getBorderColor()} ${curved && 'rounded-md'} ${Sizes[Size]} font-semibold font-ubuntu flex items-center text-nowrap text-ellipsis max-w-sm`}
+          >
+           {inputFile&& <span className="min-h-4 min-w-4 flex justify-center items-center"><ion-icon name="attach-outline"  ></ion-icon></span>}
+            Choose a file <Truncate className="!text-gray-300 text-sm  text-nowrap ml-2">{inputFile}</Truncate> 
+          </label>
+        )}
         
         {["Correct", "Incorrect", "Loading"].includes(State) && (
           <div className="absolute left-full top-1/2 -translate-x-full -translate-y-1/2 pr-4">

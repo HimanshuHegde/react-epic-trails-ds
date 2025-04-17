@@ -5,10 +5,11 @@ const Badge = ({
   type = 'neutral', 
   icon,
   size = 'md',
+  className,
   ...props 
 }:badgeProp) => {
   const typeStyles = {
-    neutral: 'bg-blue-600 text-white',
+    neutral: 'bg-black text-white ',
     infoSubtle: 'bg-blue-100 text-blue-800',
     successSubtle: 'bg-green-100 text-green-800',
     warningSubtle: 'bg-yellow-100 text-yellow-800',
@@ -25,7 +26,7 @@ const Badge = ({
   };
 
   const sizeStyles = {
-    sm: 'text-xs px-2 py-0.5',
+    sm: 'text-xs px-2 py-0.5 ',
     md: 'text-sm px-2.5 py-1',
     lg: 'text-base px-3 py-1.5',
   };
@@ -34,7 +35,7 @@ const Badge = ({
 
   return (
     <span 
-      className={`${baseStyles} ${typeStyles[type]} ${sizeStyles[size]}`}
+      className={`${baseStyles} ${typeStyles[type]} ${sizeStyles[size]} ${className} h-fit`}
       {...props}
     >
       {icon && <span className="flex items-center">{icon}</span>}
@@ -62,6 +63,7 @@ type badgeProp = {
     'bundleTop',
   icon?: React.ReactNode,
   size?: 'sm'| 'md'| 'lg',
+  className?: string,
 };
 
 export default Badge;

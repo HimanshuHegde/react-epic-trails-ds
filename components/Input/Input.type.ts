@@ -1,11 +1,12 @@
 import { InputHTMLAttributes } from "react";
 
 export type NInputProp = InputHTMLAttributes<HTMLInputElement> & {
-  Size?: "small" | "medium" | "large";
+  Size?: "small" | "medium" | "large"|"fit";
   Label?: string;
   Hint?: string;
   State?: "Default" | "Active" | "Correct" | "ViewOnly" | "Loading" | "Disabled" | "Incorrect";
   curved?: boolean;
+  id?: string;
 
 };
 
@@ -16,5 +17,4 @@ export type AInputProp = InputHTMLAttributes<HTMLInputElement> & {
   State?: "Default" | "Error" | "Success" | "Loading";
   input?: string[];
   curved?: boolean;
-
 };
