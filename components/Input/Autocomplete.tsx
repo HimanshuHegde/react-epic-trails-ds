@@ -1,5 +1,9 @@
 import { useState } from "react";
-import { IoCloseCircle, IoAlertCircle, IoCheckmarkCircle } from "react-icons/io5";
+import {
+  IoCloseCircle,
+  IoAlertCircle,
+  IoCheckmarkCircle,
+} from "react-icons/io5";
 import { AInputProp } from "./Input.type";
 
 const Sizes = {
@@ -18,7 +22,7 @@ export default function AutoComplete({
   curved = false,
   ...props
 }: AInputProp) {
-  const [inputValue, setInputValue] = useState(value||props.defaultValue);
+  const [inputValue, setInputValue] = useState(value || props.defaultValue);
   const [isFocused, setIsFocused] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
 
@@ -75,20 +79,33 @@ export default function AutoComplete({
       <div className="relative">
         <div className="flex-row items-center w-[375px]">
           <input
-            className={`${Sizes[Size]} p-[8px] placeholder:text-inputPlaceholder bg-white border-[3px] ${getBorderColor()} pr-[40px] outline-none flex-1 ${curved && "rounded-md"}`}
+            {...props}
+            className={`${
+              Sizes[Size]
+            } p-[8px] placeholder:text-inputPlaceholder bg-white border-[3px] ${getBorderColor()} pr-[40px] outline-none flex-1 ${
+              curved && "rounded-md "
+            } ${props.className}`}
             disabled={State === "Loading"}
             value={inputValue}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
-            onKeyDown={(e) => {
-              if(e.key === "Tab"){
+            onFocus={(e) => {
+              setIsFocused(true);
+              props.onFocus && props.onFocus(e);
+            }}
+            onBlur={(e) => {
               setIsFocused(false);
-              setInputValue(suggestions[0] ? suggestions[0] : inputValue);
+              props.onBlur && props.onBlur(e);
+            }}
+            onKeyDown={(e) => {
+              if (e.key === "Tab") {
+                setIsFocused(false);
+                setInputValue(suggestions[0] ? suggestions[0] : inputValue);
               }
             }}
-            onChange={(e) => handleInputChange(e.target.value)}
+            onChange={(e) => {
+              handleInputChange(e.target.value);
+              props.onChange && props.onChange(e);
+            }}
             style={{ width: 375 }}
-            {...props}
           />
 
           {State === "Default" && String(inputValue).length > 0 && (
@@ -118,11 +135,17 @@ export default function AutoComplete({
         </div>
 
         {suggestions.length > 0 && (
-          <div className={`absolute top-0 left-0 ${Sizes[Size]} pointer-events-none`}>
+          <div
+            className={`absolute top-0 left-0 ${Sizes[Size]} pointer-events-none`}
+          >
             <input
-              className={`${Sizes[Size]} p-[8px] border-[3px] bg-transparent border-transparent pr-[40px] outline-none flex-1 ${curved && "rounded-md"}`}
+              className={`${
+                Sizes[Size]
+              } p-[8px] border-[3px] bg-transparent border-transparent pr-[40px] outline-none flex-1 ${
+                curved && "rounded-md"
+              }`}
               disabled
-              value={ suggestions[0]}
+              value={suggestions[0]}
               style={{ width: 375 }}
               {...props}
             />
@@ -131,10 +154,18 @@ export default function AutoComplete({
       </div>
 
       {Hint && (
-        <div className={`text-sm ${getHintColor()} flex flex-row items-center gap-1`}>
+        <div
+          className={`text-sm ${getHintColor()} flex flex-row items-center gap-1`}
+        >
           {State === "Error" && <IoAlertCircle size={16} color="#ef4444" />}
-          {State === "Success" && <IoCheckmarkCircle size={16} color="#22c55e" />}
-          <p className={`${State === "Error" && "text-contentNegative"} ${State === "Success" && "text-contentPositive"}`}>
+          {State === "Success" && (
+            <IoCheckmarkCircle size={16} color="#22c55e" />
+          )}
+          <p
+            className={`${State === "Error" && "text-contentNegative"} ${
+              State === "Success" && "text-contentPositive"
+            }`}
+          >
             {Hint}
           </p>
         </div>
