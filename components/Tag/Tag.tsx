@@ -25,7 +25,7 @@ const variantStyles: Record<TagVariant, string> = {
   neutral: "bg-zinc-800 text-zinc-200",
 };
 
-const Tag: React.FC<TagProps> = ({
+export const Tag: React.FC<TagProps> = ({
   children,
   variant = "neutral",
   className,
@@ -44,5 +44,3 @@ const Tag: React.FC<TagProps> = ({
     </span>
   );
 };
-
-export default Tag;
