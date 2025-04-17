@@ -76,7 +76,7 @@ export default function AutoComplete({
         </div>
       )}
 
-      <div className="relative">
+      <div className="relative text-black">
         <div className="flex-row items-center w-[375px]">
           <input
             {...props}
@@ -97,6 +97,7 @@ export default function AutoComplete({
             }}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
+                e.preventDefault();
                 setIsFocused(false);
                 setInputValue(suggestions[0] ? suggestions[0] : inputValue);
               }
