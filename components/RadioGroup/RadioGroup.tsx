@@ -8,7 +8,7 @@ interface ModernRadioProps {
     className?: string;
 }
 
-export const Radio = ({
+export const RadioGroup = ({
     name,
     options,
     onChange,
