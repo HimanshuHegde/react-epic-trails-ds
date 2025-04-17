@@ -16,8 +16,8 @@ export default function ChoiceGroup({
 }: ChoiceGroupProps) {
   const Size = {
     large: <h1 className='text-2xl p-4 border-b border-white'>{label}</h1>,
-    medium: <h3>{label}</h3>,
-    small: <h4>{label}</h4>,
+    medium: <h3 className='text-white'>{label}</h3>,
+    small: <h4 className='text-white'>{label}</h4>,
   }
 
   const childrenArray = Children.toArray(children)

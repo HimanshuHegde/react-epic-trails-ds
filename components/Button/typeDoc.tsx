@@ -64,11 +64,11 @@ import { TypeDocsProps } from "./Button.type";
             ) : (
               <CheckBoxOutlineBlankIcon className="text-gray-600 text-2xl" />
             )}
-            <span className="ml-2.5">{label}</span>
+            <span className="ml-2.5 text-white">{label}</span>
           </>
         ) : (
           <>
-            <span className="mr-2.5">{label}</span>
+            <span className="mr-2.5 text-white">{label}</span>
             {isChecked ? (
               <CheckBoxIcon className="text-black text-2xl" />
             ) : (
