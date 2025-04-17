@@ -22,26 +22,22 @@ export const SegmentedSwitch = ({
 
     return (
         <div
-            className={`flex border border-zinc-600 rounded-full bg-zinc-800 p-1 my-2 ${className}`}
+            className={`flex border border-zinc-500 w-fit rounded-full bg-zinc-800 p-1 my-2 ${className}`}
         >
             {options.map((option, index) => (
                 <div
                     key={option}
                     onClick={() => handleSelect(option)}
                     className={`relative flex items-center justify-center py-2 px-6 cursor-pointer transition-all duration-300
-            ${
-                selected === option
-                    ? "bg-zinc-900 text-white"
-                    : "bg-zinc-800 text-zinc-400"
-            }
-            ${index === 0 ? "rounded-l-full" : ""}
-            ${index === options.length - 1 ? "rounded-r-full" : ""}
-            ${
-                index !== 0
-                    ? "border-l border-zinc-600"
-                    : ""
-            }
-          `}
+        ${
+            selected === option
+                ? "bg-black text-white"
+                : "bg-zinc-800 text-zinc-300"
+        }
+        ${index === 0 ? "rounded-l-full" : ""}
+        ${index === options.length - 1 ? "rounded-r-full" : ""}
+        ${index !== 0 ? "border-l border-zinc-500" : ""}
+      `}
                 >
                     {option}
                 </div>
