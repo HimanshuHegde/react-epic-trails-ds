@@ -31,7 +31,7 @@ export default function AutoComplete({
 
     if (text.length > 0) {
       const filteredSuggestions = input.filter((item) =>
-        item.toLowerCase().startsWith(text.toLowerCase())
+        item.startsWith(text)
       );
       setSuggestions(filteredSuggestions);
     } else {
