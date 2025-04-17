@@ -1,0 +1,1 @@
+import {default as Coupon} from './Coupon';
