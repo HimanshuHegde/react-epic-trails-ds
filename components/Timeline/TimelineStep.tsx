@@ -5,8 +5,6 @@ interface TimelineStepProps {
     className?: string;
     completed?: boolean;
     current?: boolean;
-    activeColor?: string;
-    inactiveColor?: string;
 }
 
 export function TimelineStep({
@@ -14,16 +12,14 @@ export function TimelineStep({
     className = "",
     completed = false,
     current = false,
-    activeColor = "#22c55e",
-    inactiveColor = "#d1d5db",
 }: TimelineStepProps) {
     return (
         <div className={`flex flex-col items-center ${className}`}>
             <div
                 className="w-6 h-6 rounded-full z-10 flex items-center justify-center border-2"
                 style={{
-                    backgroundColor: completed ? activeColor : "white",
-                    borderColor: completed ? activeColor : inactiveColor,
+                    backgroundColor: "white",
+                    borderColor: "white",
                 }}
             >
                 {completed && (
@@ -47,7 +43,7 @@ export function TimelineStep({
                 )}
             </div>
 
-            <div className="mt-2 text-center">{children}</div>
+            <div className="mt-2 text-center text-white">{children}</div>
         </div>
     );
 }
