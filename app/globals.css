@@ -3,6 +3,21 @@
 @tailwind utilities;
 
 @layer base {
+  .animate-in {
+        animation: animateIn 0.3s ease forwards;
+       }
+       
+       @keyframes animateIn {
+         from {
+           opacity: 0;
+           transform: var(--transform-from, translateX(100%));
+         }
+         to {
+           opacity: 1;
+           transform: var(--transform-to, translateX(0));
+         }
+       }
+         
   :root {
     /* Magenta */
     --color-magenta-900: #50003f;
