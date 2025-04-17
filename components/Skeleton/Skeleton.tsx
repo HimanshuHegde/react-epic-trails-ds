@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-const Skeleton: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
+export const Skeleton: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
     className,
     style,
     ...rest
@@ -14,5 +14,3 @@ const Skeleton: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
         />
     );
 };
-
-export default Skeleton;
