@@ -1,7 +1,8 @@
 import {RectButton} from '../Button';
+import { ChevronDown } from '../icons';
 import { ButtonGroupProps } from './ButtonGroup.type';
 export default function ButtonGroup({
-    icon = <ion-icon name="chevron-down-outline"></ion-icon>,
+    icon = <ChevronDown />,
     buttonContent = 'Busdfsdfsfsfdftton',
     iconPosition = 'left',
     className = '',
