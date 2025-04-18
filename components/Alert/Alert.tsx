@@ -88,7 +88,7 @@ const Alert: React.FC<AlertProps> = ({
             </a>
           )}
            {actionText && onAction && (
-          <div className={`ml-auto ${rtl ? 'text-left' : 'text-right'} `}>
+          <div className={`pl-4 ml-auto ${rtl ? 'text-left' : 'text-right'} `}>
             <RectButton label={actionText} variant='secondary' size='small' style={{border:'none'}} onClick={onAction}/>
           </div>
         )}
