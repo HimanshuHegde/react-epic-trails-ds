@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
+import { Close } from '../icons';
 
 // Types
 type PopoverProps = {
@@ -234,7 +235,7 @@ export const PopoverContent = ({
         className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center rounded-full  hover:bg-zinc-900 focus:outline-none"
         aria-label="Close"
       >
-        <ion-icon name="close"></ion-icon>
+        <Close/>
       </button>
       
       <div className="p-4">{children}</div>

@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { CloseCircle } from '../icons';
 
 type SelectInputProps = {
   options: string[];
@@ -89,7 +90,7 @@ export default function InputSelect({
             onClick={clearSelection}
             className="absolute right-2 text-gray-500 hover:text-gray-700 flex justify-center"
           >
-            <ion-icon name="close-circle" style={{width: '20px', height: '20px'}}></ion-icon>
+            <CloseCircle height='20px' width='20px'/>
           </button>
         )}
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { BreadcrumbsProps } from './types';
 import { BreadcrumbsItem } from './index';
+import { ChevronBackOutline, ChevronForwardOutline } from '../icons';
  const Breadcrumbs = ({
   children,
   onGoBack,
@@ -12,10 +13,7 @@ import { BreadcrumbsItem } from './index';
   const isRtl = direction === 'rtl';
   
   const defaultSeparator = separator || (
-    <ion-icon 
-      name={isRtl ? "chevron-back-outline" : "chevron-forward-outline"} 
-      className="h-4 w-4 text-gray-400"
-    ></ion-icon>
+    isRtl ? <ChevronBackOutline color='#a6a6a6'/> : <ChevronForwardOutline color='#a6a6a6'/>
   );
 
   return (

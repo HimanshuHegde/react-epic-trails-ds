@@ -1,6 +1,7 @@
 // Card.tsx
 'use client'
 import React, { useState, ReactNode } from 'react';
+import {  ChevronDownOutline, ChevronUpOutline, Close } from '../icons';
 
 // Types for the Card components
 type CardBaseProps = {
@@ -66,7 +67,7 @@ export const CardSection: React.FC<CardSectionProps> = ({
             aria-expanded={isExpanded}
             aria-label={isExpanded ? "Collapse section" : "Expand section"}
           >
-            {isExpanded ? <ion-icon name="chevron-up-outline" ></ion-icon> : <ion-icon name="chevron-down-outline"></ion-icon>}
+            {isExpanded ? <ChevronUpOutline/>: <ChevronDownOutline/>}
           </button>
         )}
       </div>
@@ -125,7 +126,7 @@ export const Card: React.FC<CardProps> = ({
             className="text-white hover:text-gray-600 focus:outline-none flex justify-center align-top"
             aria-label="Close"
           >
-            <ion-icon name="close"></ion-icon>
+            <Close/>
           </button>
         </div>
       )}

@@ -6,6 +6,7 @@ import {
 } from "react-icons/io5";
 import { NInputProp } from "./Input.type";
 import Truncate from "../Truncate/Truncate";
+import { AttachOutline, CloseCircle, Eye, EyeOff } from "../icons";
 const Sizes = {
   small: "w-[375px] h-[36px]",
   medium: "w-[375px] h-[48px]",
@@ -107,7 +108,7 @@ export default function NormalText({
           >
             
               <span className="min-h-4 min-w-4 flex justify-center items-center">
-                <ion-icon name="attach-outline" style={{width: "20px", height: "20px"}}></ion-icon>
+                <AttachOutline style={{width: "20px", height: "20px"}}/>
               </span>
             
             Choose a file{" "}
@@ -130,9 +131,9 @@ export default function NormalText({
             }}
           >
             {showPassword ? (
-              <ion-icon name="eye-off"></ion-icon>
+              <EyeOff/>
             ) : (
-              <ion-icon name="eye"></ion-icon>
+              <Eye/>
             )}
           </button>
           
@@ -142,7 +143,7 @@ export default function NormalText({
           <button className="flex items-center" onClick={() => {setInputFile(null)
           setInputValue('');
           }}>
-            <ion-icon name="close-circle" style={{width: "20px", height: "20px"}}></ion-icon>
+            <CloseCircle width="20px" height="20px"/>
           </button>
         )}
 

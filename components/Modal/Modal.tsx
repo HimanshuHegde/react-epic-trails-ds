@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import clsx from "clsx";
+import { ArrowBackOutline, Close } from "../icons";
 
 type ModalProps = {
   children: React.ReactNode;
@@ -115,7 +116,7 @@ export const Modal: React.FC<ModalProps> = ({
               className="text-white hover:text-gray-400 mr-4"
               aria-label="Go back"
             >
-              <ion-icon name="arrow-back-outline" style={{width: "24px", height: "24px"}} />
+              <ArrowBackOutline width="24px" height="24px" />
             </button>
           )}
 
@@ -126,7 +127,7 @@ export const Modal: React.FC<ModalProps> = ({
               onClick={onClose}
               className="ml-auto text-white hover:text-red-400"
             >
-              <ion-icon name="close" style={{width: "24px", height: "24px"}} />
+              <Close width="24px" height="24px" />
             </button>
           )}
         </div>
