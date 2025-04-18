@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React Epic Trails Design System
 
-## Getting Started
+[![License](https://img.shields.io/npm/l/react-epic-trails-ds.svg)](https://github.com/HimanshuHegde/react-epic-trails-ds/blob/main/LICENSE)  
+[![TypeScript](https://img.shields.io/badge/TypeScript-Ready-blue.svg)](https://www.typescriptlang.org/)  
+[![Version](https://img.shields.io/badge/version-0.0.1-orange.svg)](https://github.com/HimanshuHegde/react-epic-trails-ds)
 
-First, run the development server:
+> **Note:** This package is currently in early development (v0.0.1). APIs may change frequently.
+
+A flexible and customizable design system for **React 18**, offering pre-built UI components, typography, and theming capabilities tailored for outdoor and adventure-themed web applications.
+
+## 🚧 Under Development
+
+This design system is under active development. Many features are planned but not yet implemented. Documentation and examples will expand as we progress.
+
+## 📦 Installation
 
 ```bash
-npm run dev
+npm install react-epic-trails-ds
 # or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+yarn add react-epic-trails-ds
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Getting Started
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```tsx
+import { Button } from 'react-epic-trails-ds';
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+export default function App() {
+  return (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <Button variant="primary">
+        Start Exploring
+      </Button>
+    </div>
+  );
+}
+```
 
-## Learn More
+## 🛠 Development
 
-To learn more about Next.js, take a look at the following resources:
+To contribute to the design system:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone the repository
+   ```bash
+   git clone https://github.com/HimanshuHegde/react-epic-trails-ds.git
+   ```
+2. Install dependencies
+   ```bash
+   npm install
+   ```
+3. Start the development server
+   ```bash
+   npm run dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## 📚 Current Components
 
-## Deploy on Vercel
+- **Buttons**: `Primary`, `Secondary` variants with multiple sizes (Medium, Large, Docked)
+- **Tiles**: Basic content containers with various visual states
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🗺 Roadmap
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Full component library (Inputs, Cards, Modals, etc.)
+- Dark/light theme customization
+- Accessibility support (WCAG AA+)
+- Docs website + examples
+- Interactive component playground
+
+## 📄 License
+
+[MIT](https://github.com/HimanshuHegde/react-epic-trails-ds/blob/main/LICENSE)
+
+## 👥 Contributors
+
+<div align="center">
+  <a href="https://github.com/HimanshuHegde/react-epic-trails-ds/graphs/contributors">
+    <img src="https://contrib.rocks/image?repo=HimanshuHegde/react-epic-trails-ds" />
+  </a>
+</div>
+
+## 🤝 How to Contribute
+
+Interested in contributing? Follow our [contribution guidelines](CONTRIBUTING.md):
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to your branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
