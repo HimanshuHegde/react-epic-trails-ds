@@ -5,7 +5,7 @@ import {
   IoCheckmarkCircle,
 } from "react-icons/io5";
 import { NInputProp } from "./Input.type";
-import Truncate from "../Truncate/Truncate";
+import {Truncate} from "../Truncate";
 import { AttachOutline, CloseCircle, Eye, EyeOff } from "../icons";
 const Sizes = {
   small: "w-[375px] h-[36px]",
