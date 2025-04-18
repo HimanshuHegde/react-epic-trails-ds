@@ -1,5 +1,6 @@
 import { Children, Fragment, useState } from "react";
 import { Badge } from "../Badge";
+import { ChevronDownOutline, ChevronUpOutline } from "../icons";
 
 type CollapseProps = {
     badge?: string[],
@@ -28,9 +29,9 @@ export default function Collapse({badge=[],label,expanded=false,actionFunction,a
                         {actionButtonLabel?<button  onClick={actionFunction}><u>{actionButtonLabel}</u></button>:null}
                     </span>
                     {expand?
-                    <button onClick={e=>{setExpand(!expand)}} ><ion-icon name="chevron-up-outline"></ion-icon></button> 
+                    <button onClick={e=>{setExpand(!expand)}} ><ChevronUpOutline/></button> 
                     : 
-                    <button onClick={e=>{setExpand(!expand)}}><ion-icon name="chevron-down-outline"></ion-icon></button>}
+                    <button onClick={e=>{setExpand(!expand)}}><ChevronDownOutline/></button>}
                 </div>
             </div>
             <div className="bg-black text-white ">   
