@@ -14,7 +14,7 @@ export default function Collapse({badge=[],label,expanded=false,actionFunction,a
       const childrenArray = Children.toArray(children)
     return (
         <div className="w-full border-gray-700 border-b">
-            <div className="flex  bg-black text-white justify-between px-4 items-center py-4 ">
+            <div className="flex  bg-black text-white justify-between px-4 gap-8 items-center py-4 ">
                 <div className="flex gap-4">
                 <span className="text-1xl">{label}</span>
                 {badge.map((e)=>{
