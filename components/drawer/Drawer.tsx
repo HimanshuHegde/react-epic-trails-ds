@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { DrawerProps } from './types';
+import { Close } from '../icons';
 
 export const Drawer: React.FC<DrawerProps> = ({
   isOpen = false,
@@ -131,7 +132,7 @@ export const Drawer: React.FC<DrawerProps> = ({
               className={`p-2 rounded-full transition-colors text-gray-300 hover:text-white ${closeButtonClassName}`}
               aria-label="Close drawer"
             >
-            <ion-icon name="close"></ion-icon>
+            <Close/>
             </button>
           </div>
           <div className={`flex-1 overflow-auto ${bodyClassName}`}>
