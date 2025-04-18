@@ -1,4 +1,5 @@
 import { HTMLAttributes, ReactNode, useRef, useState, useEffect, MouseEvent, TouchEvent } from "react";
+import { ChevronBackOutline, ChevronForwardOutline } from "../icons";
 
 type HorizontalScrollProps = HTMLAttributes<HTMLDivElement> & {
   children: ReactNode;
@@ -143,7 +144,7 @@ export default function HorizontalScroll({
           className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-opacity-70  h-full p-1 shadow-md hover:bg-opacity-90 transition-opacity  bg-gradient-to-l from-transparent to-white"
           aria-label="Scroll left"
         >
-          <ion-icon name="chevron-back-outline" className="h-6 w-6" />
+          <ChevronBackOutline color="black"/>
         </button>
       )}
       
@@ -168,7 +169,7 @@ export default function HorizontalScroll({
           className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-gradient-to-r from-transparent to-white bg-opacity-70  p-1 shadow-md hover:bg-opacity-90 transition-opacity h-full"
           aria-label="Scroll right"
         >
-          <ion-icon name="chevron-forward-outline" className="h-6 w-6" />
+          <ChevronForwardOutline color="black"/>
         </button>
       )}
     </div>
