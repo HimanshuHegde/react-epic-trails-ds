@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import clsx from "clsx";
 import { MenuSharp } from "../icons";
-import { Drawer } from "../drawer";
+import { Drawer } from "../Drawer";
 import { Collapse } from "../Collapse";
 
 type NavbarProps = {
