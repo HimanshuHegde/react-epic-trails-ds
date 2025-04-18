@@ -1,5 +1,4 @@
 import React from "react";
-import clsx from "clsx";
 
 type ListProps = {
   children: React.ReactNode;
