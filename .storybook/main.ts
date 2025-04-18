@@ -18,6 +18,9 @@ const config: StorybookConfig = {
   "framework": {
     "name": "@storybook/nextjs",
     "options": {}
-  }
+  },
+  core: {
+    disableTelemetry: true,
+  },
 };
 export default config;
