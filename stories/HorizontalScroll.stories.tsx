@@ -8,7 +8,7 @@ const meta: Meta<typeof HorizontalScroll> = {
     argTypes: {
         showArrows: { control: "boolean" },
         children: {
-            control: false, // We'll define children manually in each story
+            control: false,
         },
     },
 };
