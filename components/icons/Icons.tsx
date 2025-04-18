@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-export const InfoIcon = ({ size = "1em", color="black", height="", width="", ...props }) => {
+export const InfoIcon = ({ size = "1em", color="", height="", width="", ...props }) => {
   return (
     <ion-icon name="information-circle" style={{ fontSize: size, color: color, height: height, width: width }} {...props}></ion-icon>
   );
