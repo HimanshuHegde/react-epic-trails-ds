@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  background: black;
+}
+
 @layer base {
   .animate-in {
         animation: animateIn 0.3s ease forwards;
