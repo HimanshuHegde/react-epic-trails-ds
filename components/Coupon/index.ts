@@ -1,1 +1,1 @@
-import {default as Coupon} from './Coupon';
+export {default as Coupon} from './Coupon';
