@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-export default function Truncate({
+export function Truncate({
     children,
     maxWidth,
     className = "",
