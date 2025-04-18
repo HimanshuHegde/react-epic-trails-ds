@@ -1,4 +1,5 @@
 import React, { InputHTMLAttributes, useState } from "react";
+import { Checkbox, SquareOutline } from "../icons";
 type CheckBoxProps = InputHTMLAttributes<HTMLInputElement> & {
     checked?: boolean
     children?: React.ReactNode
@@ -32,11 +33,11 @@ export default function CheckBox({children,
 
                         {check ?        
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400' : ''}` } onClick={e=>{(setCheck(!check))}}>
-                                <ion-icon name="checkbox" ></ion-icon>
+                                <Checkbox/>
                             </button>
                             : 
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400' : ''}`} onClick={e=>{(setCheck(!check))}}>
-                                <ion-icon name="square-outline"></ion-icon>
+                                <SquareOutline/>
                             </button>}
                     </span>
                     <label  htmlFor={name} className="flex flex-col leading-none gap-1 text-white">
