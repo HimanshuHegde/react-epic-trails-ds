@@ -12,7 +12,7 @@ export const TooltipTrigger = ({
     className = "",
     asChild = false,
 }: TooltipTriggerProps) => {
-    const { setIsOpen } = useTooltipContext();
+    const { setIsOpen, tooltipRef } = useTooltipContext();
 
     const triggerProps = {
         onMouseEnter: () => setIsOpen(true),
@@ -26,5 +26,5 @@ export const TooltipTrigger = ({
         return React.cloneElement(children, triggerProps);
     }
 
-    return <div {...triggerProps}>{children}</div>;
+    return <div {...triggerProps} ref={tooltipRef}>{children}</div>;
 };
