@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import {BadgeList,BadgeListItem} from '../components/BadgeList';
 import { Alert, Car, Shield } from '@/components/icons';
-import {Radio} from '@/components/RadioGroup/RadioGroup';
+import {RadioGroup} from '@/components/RadioGroup/RadioGroup';
 import { CheckBox } from '@/components/CheckBox';
 import { ChoiceGroup } from '@/components/ChoiceGroup';
 import { Badge } from '@/components/Badge';
