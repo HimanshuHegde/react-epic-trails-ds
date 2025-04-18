@@ -20,8 +20,12 @@ type Story = StoryObj<typeof RadioGroup>;
 export const Default: Story = {
     args: {
         name: "choices",
-        options: ["Option 1", "Option 2", "Option 3"],
-        defaultSelected: "Option 2",
+        options: [
+            { label: "Option 1", value: "option1" },
+            { label: "Option 2", value: "option2" },
+            { label: "Option 3", value: "option3" },
+        ],
+        defaultSelected: "option2",
         className: "",
     },
     render: (args) => {
@@ -31,9 +35,9 @@ export const Default: Story = {
             <div>
                 <RadioGroup
                     {...args}
-                    onChange={(val) => {
-                        setSelected(val);
-                        args.onChange?.(val);
+                    onChange={(s) => {
+                        setSelected(s);
+                        args.onChange?.(s);
                     }}
                 />
                 <p className="mt-4 text-white">Selected: {selected}</p>
