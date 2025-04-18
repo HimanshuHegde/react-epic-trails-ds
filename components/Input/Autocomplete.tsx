@@ -31,7 +31,7 @@ export default function AutoComplete({
 
     if (text.length > 0) {
       const filteredSuggestions = input.filter((item) =>
-        item.toLowerCase().startsWith(text.toLowerCase())
+        item.startsWith(text)
       );
       setSuggestions(filteredSuggestions);
     } else {
@@ -71,12 +71,12 @@ export default function AutoComplete({
   return (
     <div className="flex flex-col gap-2 relative w-[375px]">
       {Label && (
-        <div className="text-sm">
+        <div className="text-sm text-white">
           <p>{Label}</p>
         </div>
       )}
 
-      <div className="relative">
+      <div className="relative text-black">
         <div className="flex-row items-center w-[375px]">
           <input
             {...props}
@@ -97,6 +97,7 @@ export default function AutoComplete({
             }}
             onKeyDown={(e) => {
               if (e.key === "Tab") {
+                e.preventDefault();
                 setIsFocused(false);
                 setInputValue(suggestions[0] ? suggestions[0] : inputValue);
               }
@@ -162,8 +163,8 @@ export default function AutoComplete({
             <IoCheckmarkCircle size={16} color="#22c55e" />
           )}
           <p
-            className={`${State === "Error" && "text-contentNegative"} ${
-              State === "Success" && "text-contentPositive"
+            className={`text-white ${State === "Error" && "!text-contentNegative"} ${
+              State === "Success" && "!text-contentPositive"
             }`}
           >
             {Hint}

@@ -39,8 +39,7 @@ export default function CheckBox({children,
                                 <ion-icon name="square-outline"></ion-icon>
                             </button>}
                     </span>
-                    <label  htmlFor={name} className="flex flex-col leading-none gap-1">
-
+                    <label  htmlFor={name} className="flex flex-col leading-none gap-1 text-white">
                         {label}
                         <div className="text-sm text-gray-400 leading-none">{info}</div>
                     </label>

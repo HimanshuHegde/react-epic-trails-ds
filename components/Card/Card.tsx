@@ -109,7 +109,7 @@ export const Card: React.FC<CardProps> = ({
   }
 
   return (
-    <div className={`bg-black text-white rounded-lg shadow-md overflow-hidden flex justify-around ${className} text`}>
+    <div className={`bg-black text-white shadow-md overflow-hidden flex justify-around ${className} text`}>
         {loading ? (
         <LoadingSpinner />
       ) : (
@@ -136,9 +136,6 @@ export const Card: React.FC<CardProps> = ({
           {actions}
         </div>
       )}
-
-      {/* Card Content */}
-      
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import { Icon } from "@mui/material";
 import React, { useState } from "react";
 import { ButtonProps } from "./Button.type";
 
@@ -67,7 +66,7 @@ const RectButton = ({
           <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
         </div>
       ) : (
-        <span className={`${state === "disabled" ? "text-[#868686]" : buttonVariant === "primary" ? "text-white" : "text-black"}`}>
+        <span className={`${state === "disabled" ? "text-contentStatusDisabled" : buttonVariant === "primary" ? "text-white" : "text-black"}`}>
           {children||label}
         </span>
       )}
