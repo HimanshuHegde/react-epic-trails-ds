@@ -7,6 +7,7 @@ export type NInputProp = InputHTMLAttributes<HTMLInputElement> & {
   State?: "Default" | "Active" | "Correct" | "ViewOnly" | "Loading" | "Disabled" | "Incorrect";
   curved?: boolean;
   id?: string;
+  clear?: boolean;
 
 };
 

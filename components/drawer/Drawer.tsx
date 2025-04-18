@@ -128,7 +128,7 @@ export const Drawer: React.FC<DrawerProps> = ({
             <h2 className="text-xl font-semibold text-white">{title}</h2>
             <button
               onClick={onClose}
-              className={`p-2 rounded-full hover:bg-gray-800 transition-colors text-gray-300 hover:text-white ${closeButtonClassName}`}
+              className={`p-2 rounded-full transition-colors text-gray-300 hover:text-white ${closeButtonClassName}`}
               aria-label="Close drawer"
             >
             <ion-icon name="close"></ion-icon>
