@@ -11,7 +11,7 @@ import { Collapse } from '@/components/Collapse';
 import Coupon from '@/components/Coupon/Coupon';
 import { Dialogue } from '@/components/Dialogue';
 import { RectButton } from '@/components/Button';
-import { Drawer } from '@/components/drawer';
+import { Drawer } from '@/components/Drawer';
 import { NormalInput } from '@/components/Input';
 // import * as Icons from '../components/icons';
 
