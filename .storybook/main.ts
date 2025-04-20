@@ -6,12 +6,7 @@ const config: StorybookConfig = {
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"
   ],
   "addons": [
-    {
-      "name": "@storybook/addon-essentials",
-      "options": {
-        "docs": false
-      }
-    },
+    "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions"
   ],
@@ -22,5 +17,8 @@ const config: StorybookConfig = {
   core: {
     disableTelemetry: true,
   },
+  "staticDirs": [
+    "..\\public"
+  ],
 };
 export default config;
