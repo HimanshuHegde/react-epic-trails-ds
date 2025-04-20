@@ -48,7 +48,7 @@ export const SuccessWithDismiss: Story = {
 
 export const ErrorWithAction: Story = {
     args: {
-        variant: "error",
+        variant: "critical",
         actionText: "Retry",
         children: "Something went wrong.",
     },
