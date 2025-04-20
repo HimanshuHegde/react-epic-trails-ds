@@ -3,7 +3,7 @@ import "@/app/globals.css";
 
 const preview: Preview = {
   parameters: {
-    layout: "centered",
+    layout: "padded",
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -13,7 +13,7 @@ const preview: Preview = {
     backgrounds: {
       default: 'dark',
       values: [
-        { name: 'dark', value: '#111' },
+        { name: 'dark', value: '#27272a' },
         { name: 'light', value: '#ffffff' },
       ],
     },

@@ -19,10 +19,10 @@ type Story = StoryObj<typeof HorizontalScroll>;
 // Helper component for children
 const ScrollItems = () => (
     <div className="flex gap-4">
-        {Array.from({ length: 10 }).map((_, i) => (
+        {Array.from({ length:  30}).map((_, i) => (
             <div
                 key={i}
-                className="min-w-[150px] h-[100px] bg-blue-500 text-white flex items-center justify-center rounded-md"
+                className="!w-48 !h-48 bg-blue-500 text-white flex items-center justify-center "
             >
                 Item {i + 1}
             </div>

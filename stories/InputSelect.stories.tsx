@@ -66,7 +66,6 @@ export const WithCustomClass: Story = {
             options={["Small", "Medium", "Large"]}
             value={"Medium"}
             onChange={() => {}}
-            className="border border-blue-500 p-2 rounded"
         />
     ),
 };

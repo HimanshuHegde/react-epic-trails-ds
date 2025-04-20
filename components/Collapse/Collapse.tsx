@@ -15,8 +15,8 @@ export default function Collapse({badge=[],label,expanded=false,actionFunction,a
       const childrenArray = Children.toArray(children)
     return (
         <div className="w-full border-gray-700 border-b">
-            <div className="flex  bg-black text-white justify-between px-4 gap-8 items-center py-4 ">
-                <div className="flex gap-4">
+            <div className="flex  bg-black text-white items-center px-4 gap-8  py-4 ">
+                <div className="flex gap-4 items-center">
                 <span className="text-1xl">{label}</span>
                 {badge.map((e)=>{
                     return (
@@ -29,9 +29,9 @@ export default function Collapse({badge=[],label,expanded=false,actionFunction,a
                         {actionButtonLabel?<button  onClick={actionFunction}><u>{actionButtonLabel}</u></button>:null}
                     </span>
                     {expand?
-                    <button onClick={e=>{setExpand(!expand)}} ><ChevronUpOutline/></button> 
+                    <button onClick={e=>{setExpand(!expand)}} className="flex items-center" ><ChevronUpOutline color="white"/></button> 
                     : 
-                    <button onClick={e=>{setExpand(!expand)}}><ChevronDownOutline/></button>}
+                    <button onClick={e=>{setExpand(!expand)}} className="flex items-center"><ChevronDownOutline color="white"/></button>}
                 </div>
             </div>
             <div className="bg-black text-white ">   

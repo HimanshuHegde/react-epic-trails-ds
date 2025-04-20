@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
     args: {
         buttonLabel: "Submit",
-        label: "Agree to terms",
+        label: "Agree to terms and condition",
         icon: "left",
         size: "medium",
         state: "default",

@@ -22,7 +22,7 @@ export default function CheckBox({children,
 }: CheckBoxProps) {
     const [check , setCheck] = useState<boolean>(checked);
     return (
-        <div className={`flex gap-2 p-2 items-center ${disabled ? 'cursor-not-allowed text-gray-400' : ''} bg-black text-white`}>
+        <div className={`flex gap-2 p-2 ${disabled ? 'cursor-not-allowed text-gray-400' : ''} bg-black text-white`}>
 
             <div id={name} className={`${disabled ? 'cursor-not-allowed text-gray-400' : 'cursor-pointer'}`}>
                 <span className={`flex gap-2`}>
@@ -33,11 +33,11 @@ export default function CheckBox({children,
 
                         {check ?        
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400' : ''}` } onClick={e=>{(setCheck(!check))}}>
-                                <Checkbox/>
+                                <Checkbox color="white" height="20px"/>
                             </button>
                             : 
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400' : ''}`} onClick={e=>{(setCheck(!check))}}>
-                                <SquareOutline/>
+                                <SquareOutline color="white"/>
                             </button>}
                     </span>
                     <label  htmlFor={name} className="flex flex-col leading-none gap-1 text-white">

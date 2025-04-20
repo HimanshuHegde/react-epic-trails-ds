@@ -43,7 +43,7 @@ export const Default: Story = {
     render: (args) => (
         <div className="min-h-[200vh] bg-gray-900 text-white">
             <Navbar {...args} />
-            <main className="p-8">
+            <main className="p-8 pt-96">
                 <h1 className="text-3xl font-bold">Welcome to the Page</h1>
                 <p className="mt-4">
                     Scroll to test `hideOnScroll` and `transparentBgAtTop`
