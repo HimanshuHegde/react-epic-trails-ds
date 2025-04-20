@@ -17,7 +17,8 @@ const RectButton = ({
     fit: "w-fit h-fit p-[10px]",
     small: "min-w-[80px] h-fit p-[10px]", 
     medium: "min-w-[120px] h-fit p-[10px]", 
-    large: "min-w-[160px] h-fit p-[15px]", 
+    large: "min-w-[160px] h-fit p-[15px]",
+    full: "w-full h-full p-[10px]",
   };
 
   const primaryStates = {
@@ -62,8 +63,8 @@ const RectButton = ({
       {...props}
     >
       {state === "loading" ? (
-        <div className="flex items-center justify-center">
-          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+        <div>
+          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
         </div>
       ) : (
         <span className={`${state === "disabled" ? "text-contentStatusDisabled" : buttonVariant === "primary" ? "text-white" : "text-black"}`}>

@@ -5,6 +5,7 @@ import { ChoiceGroup } from "@/components/ChoiceGroup";
 const meta: Meta<typeof ChoiceGroup> = {
     title: "Components/ChoiceGroup",
     component: ChoiceGroup,
+    tags: ["autodocs"],
     argTypes: {
         label: { control: "text" },
         size: {
@@ -46,8 +47,8 @@ export const Playground: Story = {
 
 // 📏 Large header label
 export const Large: Story = {
-    render: () => (
-        <ChoiceGroup label="Large Label" size="large" className="p-4">
+    render: (args) => (
+        <ChoiceGroup label="Large Label" size="large" className="p-4" {...args}>
             <label>
                 <input type="radio" name="choice" value="1" className="mr-2" />
                 Option 1
@@ -66,8 +67,8 @@ export const Large: Story = {
 
 // 📐 Medium label
 export const Medium: Story = {
-    render: () => (
-        <ChoiceGroup label="Medium Label" size="medium" className="p-4">
+    render: (args) => (
+        <ChoiceGroup label="Medium Label" size="medium" className="p-4" {...args}>
             <label>
                 <input type="radio" name="choice" value="1" className="mr-2" />
                 Option 1
@@ -86,8 +87,8 @@ export const Medium: Story = {
 
 // 🪶 Small label
 export const Small: Story = {
-    render: () => (
-        <ChoiceGroup label="Small Label" size="small" className="p-4">
+    render: (args) => (
+        <ChoiceGroup label="Small Label" size="small" className="p-4" {...args}>
             <label>
                 <input type="radio" name="choice" value="1" className="mr-2" />
                 Option 1
@@ -106,8 +107,8 @@ export const Small: Story = {
 
 // ❌ No label
 export const WithoutLabel: Story = {
-    render: () => (
-        <ChoiceGroup size="medium" className="p-4">
+    render: (args) => (
+        <ChoiceGroup size="medium" className="p-4" {...args}>
             <label>
                 <input type="radio" name="choice" value="1" className="mr-2" />
                 Option 1

@@ -8,6 +8,7 @@ import {
 
 const meta: Meta<typeof MobileDialog> = {
     title: "Components/MobileDialog",
+    tags: ["autodocs"],
     component: MobileDialog,
 };
 

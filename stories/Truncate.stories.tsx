@@ -5,6 +5,7 @@ import { Truncate } from "@/components/Truncate";
 const meta: Meta<typeof Truncate> = {
     title: "Components/Truncate",
     component: Truncate,
+    tags: ["autodocs"],
     argTypes: {
         maxWidth: {
             control: "text",

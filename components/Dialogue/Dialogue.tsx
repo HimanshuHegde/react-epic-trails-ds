@@ -18,7 +18,7 @@ export default function Dialogue({title="hello",description="hello",image="hello
                     <span className="text-lg text-gray-300">{description}</span>
                     {imagePosition === 'down' && <span>{image}</span>}
                 </div>
-                <div className="flex gap-2 ml-auto">
+                <div className="flex gap-2 ml-auto text-white">
                     {childrenArray.map((child, index) => (<div key={index} >{child}</div>))}
                 </div>
             </div>

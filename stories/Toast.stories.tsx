@@ -5,6 +5,7 @@ import { ToastContainer, PositionGroup } from "@/components/Toast";
 const meta: Meta<typeof ToastContainer> = {
     title: "Components/Toast",
     component: ToastContainer,
+    tags: ["autodocs"],
     argTypes: {
         toasts: { control: "object" },
         onDismiss: { action: "dismissed" },

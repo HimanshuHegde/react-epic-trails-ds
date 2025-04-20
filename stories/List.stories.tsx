@@ -6,6 +6,7 @@ import { CheckmarkCircle } from "@/components/icons";
 const meta: Meta<typeof Lists> = {
     title: "Components/List",
     component: Lists,
+    tags: ["autodocs"],
     argTypes: {
         type: {
             control: "select",

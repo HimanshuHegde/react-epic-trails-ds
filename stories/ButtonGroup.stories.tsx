@@ -1,5 +1,10 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { ButtonGroup } from "@/components/ButtonGroup";
+import {
+    ChevronDownSharp,
+    ChevronForward,
+    CloudUpload,
+} from "./../components/icons/Icons";
 
 const meta = {
     title: "Components/ButtonGroup",
@@ -11,8 +16,7 @@ const meta = {
     argTypes: {
         buttonContent: { control: "text" },
         iconPosition: { control: "radio", options: ["left", "right"] },
-        size: { control: "radio", options: ["small", "medium", "large"] },
-        variant: { control: "radio", options: ["contained", "outlined"] },
+        variant: { control: "radio", options: ["primary", "secondary"] },
         contentButtonSize: {
             control: "radio",
             options: ["fit", "small", "medium", "large"],
@@ -30,25 +34,23 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const ContainedWithLeftIcon: Story = {
+export const PrimaryWithLeftIcon: Story = {
     args: {
         buttonContent: "Submit",
-        icon: "🚀",
+        icon: <ChevronDownSharp color="white" />,
         iconPosition: "left",
-        size: "medium",
-        variant: "contained",
+        variant: "primary",
         contentButtonSize: "medium",
-        iconButtonSize: "small",
+        iconButtonSize: "fit",
     },
 };
 
-export const OutlinedWithRightIcon: Story = {
+export const SecondaryWithRightIcon: Story = {
     args: {
         buttonContent: "Next",
-        icon: "➡️",
+        icon: <ChevronForward color="black" />,
         iconPosition: "right",
-        size: "small",
-        variant: "outlined",
+        variant: "secondary",
         contentButtonSize: "small",
         iconButtonSize: "fit",
     },
@@ -57,21 +59,20 @@ export const OutlinedWithRightIcon: Story = {
 export const LargeButtons: Story = {
     args: {
         buttonContent: "Download",
-        icon: "⬇️",
+        icon: <ChevronDownSharp color="white" />,
         iconPosition: "left",
-        size: "large",
-        variant: "contained",
+        variant: "primary",
         contentButtonSize: "large",
         iconButtonSize: "large",
     },
 };
 
-export const WithCustomClass: Story = {
-    args: {
-        buttonContent: "Upload",
-        icon: "📤",
-        iconPosition: "right",
-        variant: "outlined",
-        className: "custom-class",
-    },
-};
+// export const WithCustomClass: Story = {
+//     args: {
+//         buttonContent: "Upload",
+//         icon: <CloudUpload color="white" />,
+//         iconPosition: "right",
+//         variant: "primary",
+//         className: "custom-class",
+//     },
+// };

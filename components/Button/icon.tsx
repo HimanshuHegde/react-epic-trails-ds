@@ -1,6 +1,6 @@
 import { useState } from "react";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { ButtonProps } from "./Button.type";
+import { ArrowForward } from "../icons";
 
 // Define the button props type
 // Would normally be imported from a .type.ts file
@@ -24,6 +24,7 @@ const Icon = ({
     small: "min-w-[169px] h-fit p-[10px]", 
     medium: "min-w-[270px] h-fit p-[10px]", 
     large: "min-w-[270px] h-fit p-[15px]", 
+    full: "w-full h-full p-[10px]",
   };
   
   const primaryStates = {
@@ -76,14 +77,12 @@ const Icon = ({
     >
       {state === "loading" ? (
         <div className="flex justify-center items-center w-full">
-          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-t-2" style={{ 
-            borderColor: buttonVariant === "primary" ? "#ffffff" : "#000000" 
-          }}></div>
+          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
         </div>
       ) : (
         <>
           {icon === "left" && (
-            <ArrowForwardIcon
+            <ArrowForward
               style={{
                 color: iconColor, 
                 marginRight: "24px", 
@@ -97,7 +96,7 @@ const Icon = ({
           </span>
 
           {icon === "right" && (
-            <ArrowForwardIcon
+            <ArrowForward
               style={{
                 color: iconColor, 
                 marginLeft: "24px", 

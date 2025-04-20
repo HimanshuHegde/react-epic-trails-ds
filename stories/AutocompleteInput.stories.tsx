@@ -4,6 +4,7 @@ import { AutoComplete } from "@/components/Input";
 const meta: Meta<typeof AutoComplete> = {
     title: "Components/AutoComplete",
     component: AutoComplete,
+    tags: ["autodocs"],
     argTypes: {
         Size: {
             control: { type: "select" },

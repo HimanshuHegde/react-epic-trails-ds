@@ -67,7 +67,7 @@ export const CardSection: React.FC<CardSectionProps> = ({
             aria-expanded={isExpanded}
             aria-label={isExpanded ? "Collapse section" : "Expand section"}
           >
-            {isExpanded ? <ChevronUpOutline/>: <ChevronDownOutline/>}
+            {isExpanded ? <ChevronUpOutline color='white'/>: <ChevronDownOutline color='white'/>}
           </button>
         )}
       </div>
@@ -126,14 +126,14 @@ export const Card: React.FC<CardProps> = ({
             className="text-white hover:text-gray-600 focus:outline-none flex justify-center align-top"
             aria-label="Close"
           >
-            <Close/>
+            <Close color='white' size='20px'/>
           </button>
         </div>
       )}
       
       {/* Card with Actions */}
       {variant === 'with-actions' && (
-        <div className="flex justify-end p-2 border-b border-gray-200">
+        <div className="flex justify-end p-2 border-gray-200">
           {actions}
         </div>
       )}

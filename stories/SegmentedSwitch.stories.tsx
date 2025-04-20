@@ -5,6 +5,7 @@ import { SegmentedSwitch } from "@/components/SegmentedSwitch";
 const meta: Meta<typeof SegmentedSwitch> = {
     title: "Components/SegmentedSwitch",
     component: SegmentedSwitch,
+    tags: ["autodocs"],
     argTypes: {
         options: { control: "object" },
         defaultSelected: { control: "text" },

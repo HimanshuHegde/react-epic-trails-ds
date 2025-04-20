@@ -1,3 +1,4 @@
+// Deprecated
 import React, { ReactNode, ReactElement } from "react";
 import { WizardNavigationProps, WizardProps, WizardStepProps } from "./types";
 import { useWizard, WizardContextProvider } from "@/context/WizardContext";
@@ -89,7 +90,7 @@ const WizardContent: React.FC<WizardContentProps> = ({ id, children }) => {
                             </div>
 
                             <span
-                                className={`text-sm font-medium text-center
+                                className={`text-sm font-medium text-center whitespace-nowrap rotate-45
                 ${isCurrent ? "text-teal-500" : ""}
                 ${!isCurrent ? "text-gray-500" : ""}
               `}
@@ -155,36 +156,37 @@ const WizardNavigation: React.FC<WizardNavigationProps> = ({
 };
 
 // Usage example
-export default function WizardExample(): JSX.Element {
-    return (
-        <div className="p-6 bg-gray-900 text-white">
-            <Wizard initialActiveStep={2} initialCompletedSteps={2} id="wizard">
-                <WizardStep title="Search">
-                    <div>Search content goes here</div>
-                </WizardStep>
-                <WizardStep title="Passenger details">
-                    <div>Passenger details content goes here</div>
-                </WizardStep>
-                <WizardStep title="Ticket fare">
-                    <div>Ticket fare content goes here</div>
-                </WizardStep>
-                <WizardStep title="Customize your trip">
-                    <div>Customize your trip content goes here</div>
-                </WizardStep>
-                <WizardStep title="Kiwi.com guarantee">
-                    <div>Kiwi.com guarantee content goes here</div>
-                </WizardStep>
-                <WizardStep title="Seating">
-                    <div>Seating content goes here</div>
-                </WizardStep>
-                <WizardStep title="Overview & payment">
-                    <div>Overview & payment content goes here</div>
-                </WizardStep>
-                <WizardNavigation />
-            </Wizard>
-        </div>
-    );
-}
+// export default function WizardExample(): JSX.Element {
+//     return (
+//         <div className="p-6 bg-gray-900 text-white">
+//             <Wizard initialActiveStep={2} initialCompletedSteps={2} id="wizard">
+//                 <WizardStep title="Search">
+//                     <div>Search content goes here</div>
+//                 </WizardStep>
+//                 <WizardStep title="Passenger details">
+//                     <div>Passenger details content goes here</div>
+//                 </WizardStep>
+//                 <WizardStep title="Ticket fare">
+//                     <div>Ticket fare content goes here</div>
+//                 </WizardStep>
+//                 <WizardStep title="Customize your trip">
+//                     <div>Customize your trip content goes here</div>
+//                 </WizardStep>
+//                 <WizardStep title="Kiwi.com guarantee">
+//                     <div>Kiwi.com guarantee content goes here</div>
+//                 </WizardStep>
+//                 <WizardStep title="Seating">
+//                     <div>Seating content goes here</div>
+//                 </WizardStep>
+//                 <WizardStep title="Overview & payment">
+//                     <div>Overview & payment content goes here</div>
+//                 </WizardStep>
+//                 <WizardNavigation />
+//             </Wizard>
+//         </div>
+//     );
+// }
 
 // Export only the components that users need
-export { Wizard, WizardStep, WizardNavigation, useWizard };
+// export { Wizard, WizardStep, WizardNavigation, useWizard };
+

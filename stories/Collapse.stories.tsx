@@ -5,10 +5,12 @@ import { Collapse } from "@/components/Collapse";
 const meta: Meta<typeof Collapse> = {
     title: "Components/Collapse",
     component: Collapse,
+    tags: ["autodocs"],
     argTypes: {
         label: { control: "text" },
-        badge: { control: "object" },
+        badges: { control: "object" },
         expanded: { control: "boolean" },
+        defaultExpanded: { control: "boolean" },
         actionButtonLabel: { control: "text" },
         actionFunction: { action: "actionFunction triggered" },
         children: { control: "text" },
@@ -21,7 +23,7 @@ type Story = StoryObj<typeof Collapse>;
 export const Playground: Story = {
     args: {
         label: "Click to Expand",
-        badge: ["New", "Hot"],
+        badges: ["New", "Hot"],
         expanded: false,
         actionButtonLabel: "Do Something",
         children: "This is the collapsible content inside the component.",
@@ -29,27 +31,28 @@ export const Playground: Story = {
 };
 
 export const Default: Story = {
-    render: () => (
-        <Collapse label="Default Collapse">
+    render: (args) => (
+        <Collapse label="Default Collapse" {...args}>
             Here is some hidden content that appears when expanded.
         </Collapse>
     ),
 };
 
 export const WithBadges: Story = {
-    render: () => (
-        <Collapse label="Collapse with Badges" badge={["Beta", "v2.3"]}>
+    render: (args) => (
+        <Collapse label="Collapse with Badges" badges={["Beta", "v2.3"]}>
             Content with badge display.
         </Collapse>
     ),
 };
 
 export const WithActionButton: Story = {
-    render: () => (
+    render: (args) => (
         <Collapse
             label="Collapse with Action"
             actionButtonLabel="Take Action"
             actionFunction={() => alert("Action button clicked!")}
+            {...args}
         >
             Actionable content area.
         </Collapse>
@@ -57,8 +60,8 @@ export const WithActionButton: Story = {
 };
 
 export const InitiallyExpanded: Story = {
-    render: () => (
-        <Collapse label="Expanded on Load" expanded>
+    render: (args) => (
+        <Collapse label="Expanded on Load" defaultExpanded {...args}>
             This starts open.
         </Collapse>
     ),

@@ -5,6 +5,7 @@ import { HorizontalScroll } from "@/components/HorizontalScroll";
 const meta: Meta<typeof HorizontalScroll> = {
     title: "Components/HorizontalScroll",
     component: HorizontalScroll,
+    tags: ["autodocs"],
     argTypes: {
         showArrows: { control: "boolean" },
         children: {

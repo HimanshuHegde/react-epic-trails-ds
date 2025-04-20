@@ -7,6 +7,7 @@ const meta: Meta<
 > = {
     title: "Components/Tooltip",
     component: Tooltip,
+    tags: ["autodocs"],
     argTypes: {
         position: {
             control: "select",

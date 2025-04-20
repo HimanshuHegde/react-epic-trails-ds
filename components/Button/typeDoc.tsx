@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
-import CheckBoxIcon from "@mui/icons-material/CheckBox";
-import CheckBoxOutlineBlankIcon from "@mui/icons-material/CheckBoxOutlineBlank";
-import CircularProgress from "@mui/material/CircularProgress"; // Web equivalent of ActivityIndicator
 import { TypeDocsProps } from "./Button.type";
+import { Checkbox, SquareOutline } from "../icons";
 
  const TypeDoc = ({
   icon = "right",
@@ -30,6 +28,7 @@ import { TypeDocsProps } from "./Button.type";
     small: "w-3/4 min-w-[80px] p-[10px]",
     medium: "w-full min-w-[120px] p-[10px]",
     large: "w-full min-w-[160px] p-[15px]",
+    full: "w-full h-full p-[10px]",
   };
 
   const buttonStates = {
@@ -60,9 +59,9 @@ import { TypeDocsProps } from "./Button.type";
         {icon === "right" ? (
           <>
             {isChecked ? (
-              <CheckBoxIcon className="text-black text-2xl" />
+              <Checkbox color="white" size="20px"/>
             ) : (
-              <CheckBoxOutlineBlankIcon className="text-gray-600 text-2xl" />
+              <SquareOutline color="gray" size="20px"/>
             )}
             <span className="ml-2.5 text-white">{label}</span>
           </>
@@ -70,9 +69,9 @@ import { TypeDocsProps } from "./Button.type";
           <>
             <span className="mr-2.5 text-white">{label}</span>
             {isChecked ? (
-              <CheckBoxIcon className="text-black text-2xl" />
+              <Checkbox color="white" size="20px"/>
             ) : (
-              <CheckBoxOutlineBlankIcon className="text-gray-600 text-2xl" />
+              <SquareOutline color="gray" size="20px"/>
             )}
           </>
         )}
@@ -98,7 +97,9 @@ import { TypeDocsProps } from "./Button.type";
         {...buttonProps}
       >
         {state === "loading" ? (
-          <CircularProgress size={18} sx={{ color: "#fff" }} />
+          <div className="flex items-center justify-center">
+          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+        </div>
         ) : (
           <span className={`${isButtonDisabled ? "text-[#868686]" : "text-white"}`}>
             {buttonLabel}

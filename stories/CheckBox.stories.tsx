@@ -5,6 +5,7 @@ import { CheckBox } from "@/components/CheckBox";
 const meta: Meta<typeof CheckBox> = {
     title: "Components/CheckBox",
     component: CheckBox,
+    tags: ["autodocs"],
     argTypes: {
         checked: { control: "boolean" },
         label: { control: "text" },
@@ -37,45 +38,41 @@ export const Playground: Story = {
 // ✅ Static demos below
 
 export const Default: Story = {
-    render: () => <CheckBox label="Default checkbox" />,
+    args:{
+        label: "Default Checkbox"
+    },
 };
 
 export const Checked: Story = {
-    render: () => <CheckBox label="Checked checkbox" checked />,
+    render: (args) => <CheckBox label="Checked checkbox" checked {...args}/>,
 };
 
 export const WithInfo: Story = {
-    render: () => (
-        <CheckBox
-            label="Enable updates"
-            info="You will receive email notifications."
-        />
-    ),
+    args: {
+        label:"Enable updates",
+        info:"You will receive email notifications."
+    },
 };
 
 export const ErrorState: Story = {
-    render: () => (
-        <CheckBox
-            label="Accept terms"
-            error
-            info="You must accept terms to continue."
-        />
-    ),
+    args:{
+        label:"Accept terms",
+        error: true,
+        info:"You must accept terms to continue."
+    }
 };
 
 export const Disabled: Story = {
-    render: () => (
-        <CheckBox
-            label="Disabled checkbox"
-            disabled
-            info="This option is currently unavailable."
-        />
-    ),
+    args: {
+        label: "Diabled checkbox",
+        disabled: true,
+        info:"This option is currently unavailable."
+    },
 };
 
 export const WithChildren: Story = {
-    render: () => (
-        <CheckBox label="Subscribe to newsletter">
+    render: (args) => (
+        <CheckBox label="Subscribe to newsletter" {...args}>
             <span className="text-sm text-gray-500 ml-2">
                 Includes promotions and updates
             </span>

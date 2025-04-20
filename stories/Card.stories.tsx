@@ -35,6 +35,11 @@ export const Closable: Story = {
     render: () => (
         <CardClosable>
             <p className="p-4">You can close this card.</p>
+            <p className="p-4">You can close this card.</p>
+            <p className="p-4">You can close this card.</p>
+            <p className="p-4">You can close this card.</p>
+            <p className="p-4">You can close this card.</p>
+            <p className="p-4">You can close this card.</p>
         </CardClosable>
     ),
 };
@@ -92,6 +97,29 @@ export const ControlledAndUncontrolled: Story = {
                     This section is controlled.
                 </CardSection>
             </CardWithControlledAndUncontrolled>
+        );
+    },
+};
+
+export const ControlledWithControls: Story = {
+    render: () => {
+        const [expanded, setExpanded] = useState(true);
+
+        return (
+            <CardWithControlledWithControls>
+                <CardSection title="Uncontrolled Section" expandable>
+                    This section is uncontrolled.
+                </CardSection>
+                <CardSection
+                    title="Controlled Section"
+                    expandable
+                    controlled
+                    isExpanded={expanded}
+                    onToggle={setExpanded}
+                >
+                    This section is controlled.
+                </CardSection>
+            </CardWithControlledWithControls>
         );
     },
 };

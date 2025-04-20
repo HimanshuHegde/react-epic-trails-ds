@@ -1,10 +1,6 @@
 import { useState } from "react";
-import {
-  IoCloseCircle,
-  IoAlertCircle,
-  IoCheckmarkCircle,
-} from "react-icons/io5";
 import { AInputProp } from "./Input.type";
+import { AlertCircle, CheckmarkCircle, CloseCircle } from "../icons";
 
 const Sizes = {
   small: "w-[375px] h-[36px]",
@@ -112,9 +108,9 @@ export default function AutoComplete({
           {State === "Default" && String(inputValue).length > 0 && (
             <button
               onClick={clearInput}
-              className="absolute right-2 top-1/2 -translate-y-1/2"
+              className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center"
             >
-              <IoCloseCircle size={24} color="#5e5e5e" />
+              <CloseCircle size="24px" color="#5e5e5e" />
             </button>
           )}
 
@@ -124,13 +120,13 @@ export default function AutoComplete({
             </div>
           )}
           {State === "Success" && (
-            <div className="absolute right-2 top-1/2 -translate-y-1/2">
-              <IoCheckmarkCircle size={20} color="#22c55e" />
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+              <CheckmarkCircle size="20px" color="#22c55e" />
             </div>
           )}
           {State === "Error" && (
-            <div className="absolute right-2 top-1/2 -translate-y-1/2">
-              <IoAlertCircle size={20} color="#ef4444" />
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+              <AlertCircle size="20px" color="#ef4444" />
             </div>
           )}
         </div>
@@ -158,9 +154,9 @@ export default function AutoComplete({
         <div
           className={`text-sm ${getHintColor()} flex flex-row items-center gap-1`}
         >
-          {State === "Error" && <IoAlertCircle size={16} color="#ef4444" />}
+          {State === "Error" && <AlertCircle size="24px" color="#ef4444" />}
           {State === "Success" && (
-            <IoCheckmarkCircle size={16} color="#22c55e" />
+            <CheckmarkCircle size="16px" color="#22c55e" />
           )}
           <p
             className={`text-white ${State === "Error" && "!text-contentNegative"} ${

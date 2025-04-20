@@ -1,7 +1,7 @@
 import { InputHTMLAttributes } from "react";
 
 export type NInputProp = InputHTMLAttributes<HTMLInputElement> & {
-  Size?: "small" | "medium" | "large"|"fit";
+  Size?: "small" | "medium" | "large"|"fit"|"full";
   Label?: string;
   Hint?: string;
   State?: "Default" | "Active" | "Correct" | "ViewOnly" | "Loading" | "Disabled" | "Incorrect";

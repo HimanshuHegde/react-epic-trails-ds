@@ -5,6 +5,7 @@ import { DrawerProvider, useDrawer } from "@/components/Drawer";
 
 const meta: Meta<typeof Drawer> = {
     title: "Components/Drawer",
+    tags: ["autodocs"],
     component: Drawer,
     parameters: {
         layout: "centered",
@@ -18,7 +19,7 @@ export const Default: Story = {
     render: () => {
         const [open, setOpen] = useState(false);
         return (
-            <div className="min-h-screen bg-gray-950 text-white p-6">
+            <div className="bg-gray-950 text-white p-6">
                 <button
                     onClick={() => setOpen(true)}
                     className="bg-gray-800 px-4 py-2 rounded"
@@ -57,7 +58,7 @@ export const WithControls: Story = {
     render: ({ position, size, title }) => {
         const [open, setOpen] = useState(false);
         return (
-            <div className="min-h-screen bg-gray-950 text-white p-6">
+            <div className="bg-gray-950 text-white p-6">
                 <button
                     onClick={() => setOpen(true)}
                     className="bg-gray-800 px-4 py-2 rounded"
@@ -114,7 +115,7 @@ const DrawerContextStory: React.FC = () => {
     const { open } = useDrawer();
 
     return (
-        <div className="min-h-screen bg-gray-950 text-white p-6">
+        <div className="bg-gray-950 text-white p-6">
             <button
                 className="bg-gray-800 px-4 py-2 rounded"
                 onClick={() =>

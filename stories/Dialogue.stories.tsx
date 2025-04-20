@@ -1,15 +1,17 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Dialogue } from "@/components/Dialogue";
+import { RectButton } from "@/components/Button"; // <-- Assuming you have this
 
 const meta: Meta<typeof Dialogue> = {
     title: "Components/Dialogue",
     component: Dialogue,
+    tags: ["autodocs"],
     argTypes: {
         title: { control: "text" },
         description: { control: "text" },
-        children: { control: "text" },
-        image: { control: "text" },
+        children: { control: false },
+        image: { control: false },
         imagePosition: {
             control: "select",
             options: ["up", "down", ""],
@@ -24,46 +26,58 @@ export const Playground: Story = {
     args: {
         title: "Welcome to Dialogue",
         description: "This is a customizable dialog box component.",
-        image: <img src="https://via.placeholder.com/150" alt="placeholder" />,
+        image: <img src="https://placehold.co/150" alt="placeholder" />,
         imagePosition: "up",
-        children: "Here you can place any content inside the dialogue.",
+    },
+    render: (args) => {
+        return (
+            <Dialogue {...args}>
+                <RectButton variant="primary">Primary</RectButton>
+                <RectButton variant="secondary">Secondary</RectButton>
+            </Dialogue>
+        );
     },
 };
 
 export const ImageUp: Story = {
-    render: () => (
-        <Dialogue
-            title="Image at Top"
-            description="This dialogue has its image at the top."
-            image={
-                <img src="https://via.placeholder.com/150" alt="Top Image" />
-            }
-            imagePosition="up"
-        >
-            Content inside the dialogue
-        </Dialogue>
-    ),
+    args: {
+        title: "Image at Top",
+        description: "This dialogue has its image at the top.",
+        image: <img src="https://placehold.co/150" alt="Top Image" />,
+        imagePosition: "up",
+    },
+    render: (args) => {
+        return (
+            <Dialogue {...args}>
+                <RectButton variant="primary">Primary</RectButton>
+                <RectButton variant="secondary">Secondary</RectButton>
+            </Dialogue>
+        );
+    },
 };
 
 export const ImageDown: Story = {
-    render: () => (
-        <Dialogue
-            title="Image at Bottom"
-            description="The image appears below the content."
-            image={
-                <img src="https://via.placeholder.com/150" alt="Bottom Image" />
-            }
-            imagePosition="down"
-        >
-            Here’s some middle content between title/desc and image.
-        </Dialogue>
-    ),
+    args: {
+        title: "Image at Bottom",
+        description: "The image appears below the content.",
+        image: <img src="https://placehold.co/150" alt="Bottom Image" />,
+        imagePosition: "down",
+    },
+    render: (args) => {
+        return (
+            <Dialogue {...args}>
+                <RectButton variant="primary">Primary</RectButton>
+                <RectButton variant="secondary">Secondary</RectButton>
+            </Dialogue>
+        );
+    },
 };
 
 export const NoImage: Story = {
     render: () => (
         <Dialogue title="Simple Dialogue" description="No image is shown here.">
-            Only text-based content inside the dialogue.
+            <RectButton variant="primary">Primary</RectButton>
+            <RectButton variant="secondary">Secondary</RectButton>
         </Dialogue>
     ),
 };

@@ -24,8 +24,8 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
-    render: () => (
-        <Breadcrumbs>
+    render: (args) => (
+        <Breadcrumbs {...args}>
             <BreadcrumbsItem href="#">Home</BreadcrumbsItem>
             <BreadcrumbsItem href="#">Library</BreadcrumbsItem>
             <BreadcrumbsItem>Current</BreadcrumbsItem>
@@ -35,8 +35,8 @@ export const Default: Story = {
 };
 
 export const WithCustomSeparator: Story = {
-    render: () => (
-        <Breadcrumbs separator="👉">
+    render: (args) => (
+        <Breadcrumbs separator="👉" {...args}>
             <BreadcrumbsItem href="#">Dashboard</BreadcrumbsItem>
             <BreadcrumbsItem href="#">Projects</BreadcrumbsItem>
             <BreadcrumbsItem>Alpha</BreadcrumbsItem>
@@ -46,8 +46,8 @@ export const WithCustomSeparator: Story = {
 };
 
 export const RTL: Story = {
-    render: () => (
-        <Breadcrumbs direction="rtl" separator="|">
+    render: (args) => (
+        <Breadcrumbs direction="rtl" {...args}>
             <BreadcrumbsItem href="#">בית</BreadcrumbsItem>
             <BreadcrumbsItem href="#">ספריה</BreadcrumbsItem>
             <BreadcrumbsItem>נוכחי</BreadcrumbsItem>
@@ -57,8 +57,8 @@ export const RTL: Story = {
 };
 
 export const WithClickHandlers: Story = {
-    render: () => (
-        <Breadcrumbs onGoBack={() => alert("Going back!")}>
+    render: (args) => (
+        <Breadcrumbs onGoBack={() => alert("Going back!")} {...args}>
             <BreadcrumbsItem onClick={() => alert("Home clicked")}>
                 Home
             </BreadcrumbsItem>

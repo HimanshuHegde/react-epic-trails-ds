@@ -4,6 +4,7 @@ import { NormalInput } from "@/components/Input";
 const meta: Meta<typeof NormalInput> = {
     title: "Components/NormalInput",
     component: NormalInput,
+    tags: ["autodocs"],
     argTypes: {
         Size: {
             control: { type: "select" },

@@ -6,6 +6,7 @@ import { BadgeList, BadgeListItem } from "@/components/BadgeList";
 const meta: Meta = {
     title: "Components/BadgeList",
     component: BadgeList,
+    tags: ["autodocs"],
 };
 
 export default meta;

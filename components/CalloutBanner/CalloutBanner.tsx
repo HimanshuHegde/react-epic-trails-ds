@@ -30,12 +30,12 @@ const CalloutBanner= ({
   const variants: Record<VariantType, { bg: string; text: string; border: string }> = {
     default: {
       bg: `${theme==='primary'?'bg-black':'bg-white'}`,
-        text: 'text-white',
+      text: `${theme==='primary'?'text-white':'text-black'}`,
       border: `${theme==='primary'?'border-black':'border-yellow-500'}`
     },
     info: {
      bg: `${theme==='primary'?'bg-black':'bg-white'}`,
-      text: 'text-blue-300',
+     text: `${theme==='primary'?'text-blue-300':'text-blue-700'}`,
       border: 'border-blue-700'
     },
     warning: {

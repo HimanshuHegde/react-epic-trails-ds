@@ -6,6 +6,7 @@ import { RectButton } from "@/components/Button";
 const meta: Meta<typeof Navbar> = {
     title: "Components/Navbar",
     component: Navbar,
+    tags: ["autodocs"],
     argTypes: {
         bottomStyle: {
             control: "select",

@@ -5,6 +5,7 @@ import { NotificationBadge } from "@/components/NotificationBadge";
 const meta: Meta<typeof NotificationBadge> = {
     title: "Components/NotificationBadge",
     component: NotificationBadge,
+    tags: ["autodocs"],
     argTypes: {
         children: {
             control: "text",

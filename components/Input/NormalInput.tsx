@@ -1,17 +1,13 @@
-import { useState, useEffect } from "react";
-import {
-  IoCloseCircle,
-  IoAlertCircle,
-  IoCheckmarkCircle,
-} from "react-icons/io5";
+import { useState } from "react";
 import { NInputProp } from "./Input.type";
 import {Truncate} from "../Truncate";
-import { AttachOutline, CloseCircle, Eye, EyeOff } from "../icons";
+import { AlertCircle, AttachOutline, CheckmarkCircle, CloseCircle, Eye, EyeOff } from "../icons";
 const Sizes = {
   small: "w-[375px] h-[36px]",
   medium: "w-[375px] h-[48px]",
   large: "w-[375px] h-[56px]",
   fit: "w-fit h-fit",
+  full: "w-full h-full",
 };
 
 export default function NormalText({
@@ -37,9 +33,9 @@ export default function NormalText({
   const getIcon = () => {
     switch (State) {
       case "Correct":
-        return <IoCheckmarkCircle size={20} color="#22c55e" />;
+        return <CheckmarkCircle size="20px" color="#22c55e" />;
       case "Incorrect":
-        return <IoAlertCircle size={20} color="#ef4444" />;
+        return <AlertCircle size="20px" color="#ef4444" />;
       case "Loading":
         return (
           <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />

@@ -5,6 +5,7 @@ import { Coupon } from "@/components/Coupon"; // Adjust path if needed
 const meta: Meta<typeof Coupon> = {
     title: "Components/Coupon",
     component: Coupon,
+    tags: ["autodocs"],
     argTypes: {
         label: { control: "text" },
         size: {
@@ -28,35 +29,39 @@ export const Playground: Story = {
         label: "SAVE20",
         size: "medium",
         theme: "primary",
-        children: "Use this coupon to get 20% off your next purchase!",
     },
 };
 
 export const PrimarySmall: Story = {
-    render: () => (
-        <Coupon label="NEW10" size="small" theme="primary">
-            10% off on first order
-        </Coupon>
-    ),
+    args: {
+        label: "NEW10",
+        size:"small",
+        theme:"primary"
+    },
+    render: (args) => <Coupon {...args}></Coupon>,
 };
 
 export const SecondaryLarge: Story = {
-    render: () => (
-        <Coupon label="BIGDEAL" size="large" theme="secondary">
-            Flat ₹500 off on orders above ₹1999
-        </Coupon>
+    args: {
+        label: "BIGDEAL",
+        size: "large",
+        theme: "secondary"
+    },
+    render: (args) => (
+        <Coupon {...args}></Coupon>
     ),
 };
 
 export const WithCustomClass: Story = {
-    render: () => (
+    args: {
+        label: "FIFTY50",
+        size:"medium",
+        theme:"primary",
+        className:"bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-lg shadow-lg"
+    },
+    render: (args) => (
         <Coupon
-            label="STYLE50"
-            size="medium"
-            theme="primary"
-            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 rounded-lg shadow-lg"
-        >
-            Extra 50% off on styles you love!
-        </Coupon>
+            {...args}
+        ></Coupon>
     ),
 };

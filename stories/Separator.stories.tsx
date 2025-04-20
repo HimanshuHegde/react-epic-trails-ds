@@ -5,6 +5,7 @@ import { Separator } from "@/components/Separator";
 const meta: Meta<typeof Separator> = {
     title: "Components/Separator",
     component: Separator,
+    tags: ["autodocs"],
     argTypes: {
         orientation: {
             control: "radio",

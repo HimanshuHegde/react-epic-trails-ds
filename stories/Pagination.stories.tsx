@@ -5,6 +5,7 @@ import { Pagination } from "@/components/Pagination";
 const meta: Meta<typeof Pagination> = {
     title: "Components/Pagination",
     component: Pagination,
+    tags: ["autodocs"],
     argTypes: {
         pageCount: {
             control: { type: "number", min: 1 },

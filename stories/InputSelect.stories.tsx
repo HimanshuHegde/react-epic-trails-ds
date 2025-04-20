@@ -5,6 +5,7 @@ import { InputSelect } from "@/components/InputSelect";
 const meta: Meta<typeof InputSelect> = {
     title: "Components/InputSelect",
     component: InputSelect,
+    tags: ["autodocs"],
     argTypes: {
         options: {
             control: "object",

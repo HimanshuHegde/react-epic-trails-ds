@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Badge } from "@/components/Badge";
 import { fn } from "@storybook/test";
+import { InfoIcon } from "@/components/icons";
 
 const meta = {
     title: "Components/Badge",
@@ -55,9 +56,7 @@ export const WithIcon: Story = {
         type: "info",
         size: "md",
         icon: (
-            <span role="img" aria-label="info">
-                ℹ️
-            </span>
+            <InfoIcon/>
         ),
         children: "Info Badge",
     },
