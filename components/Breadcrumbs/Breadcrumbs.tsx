@@ -4,7 +4,6 @@ import { BreadcrumbsItem } from './index';
 import { ChevronBackOutline, ChevronForwardOutline } from '../icons';
  const Breadcrumbs = ({
   children,
-  onGoBack,
   direction = 'ltr',
   className = '',
   separator,

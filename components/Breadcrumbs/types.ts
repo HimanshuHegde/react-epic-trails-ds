@@ -1,16 +1,14 @@
-import { ReactNode, MouseEvent } from 'react';
+import { ReactNode, MouseEvent, HTMLAttributes } from 'react';
 
-export interface BreadcrumbsItemProps {
+export interface BreadcrumbsItemProps extends HTMLAttributes<HTMLElement> {
   href?: string;
   onClick?: (event: MouseEvent<HTMLAnchorElement | HTMLSpanElement>) => void;
   children: ReactNode;
   className?: string;
-  [key: string]: any; // For additional HTML attributes
 }
 
-export interface BreadcrumbsProps {
+export interface BreadcrumbsProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
-  onGoBack?: () => void;
   direction?: 'ltr' | 'rtl';
   className?: string;
   separator?: ReactNode;
