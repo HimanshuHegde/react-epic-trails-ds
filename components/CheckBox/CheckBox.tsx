@@ -38,7 +38,7 @@ export default function CheckBox({
                             </button>
                             : 
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400 cursor-not-allowed' : ''}`} onClick={e=>{if(!disabled)(setCheck(!check))}}>
-                                <SquareOutline color="black"/>
+                                <SquareOutline color={`${disabled?'gray':error? 'red' :info?'blue':'black'}`}/>
                             </button>}
                     </span>
                     <label  htmlFor={name} className="flex flex-col leading-none gap-1 text-black">
