@@ -8,7 +8,7 @@ const RectButton = ({
   disabled,
   background,
   variant = "primary",
-  children, 
+  children,
   ...props
 }: ButtonProps) => {
   const buttonVariant = variant;
@@ -47,11 +47,12 @@ const RectButton = ({
 
   return (
     <button 
+    {...props}
       disabled={disabled}
       onMouseEnter={() => isHoverEffectEnabled && setIsHovered(true)} 
       onMouseLeave={() => isHoverEffectEnabled && setIsHovered(false)} 
       style={{ backgroundColor: background ? background : undefined }}
-      className={`${sizes[size]} ${
+      className={`${sizes[size]}  ${
         background
           ? null
           : disabled
@@ -59,8 +60,7 @@ const RectButton = ({
           : isHovered && isHoverEffectEnabled
           ? states.hover 
           : states[state]
-      } flex items-center justify-center`}
-      {...props}
+      } flex items-center justify-center ${props.className}`}
     >
       {state === "loading" ? (
         <div>

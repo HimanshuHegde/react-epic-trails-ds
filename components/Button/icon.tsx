@@ -60,6 +60,7 @@ const Icon = ({
 
   return (
     <button
+    {...props}
       disabled={disabled}
       onMouseEnter={() => isHoverEffectEnabled && setIsHovered(true)} 
       onMouseLeave={() => isHoverEffectEnabled && setIsHovered(false)}
@@ -72,8 +73,8 @@ const Icon = ({
           : isHovered && isHoverEffectEnabled
           ? states.hover 
           : states[state]
-      } flex flex-row items-center justify-between`} 
-      {...props}
+      } flex flex-row items-center justify-between ${props.className}`} 
+      
     >
       {state === "loading" ? (
         <div className="flex justify-center items-center w-full">

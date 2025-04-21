@@ -52,24 +52,25 @@ import { Checkbox, SquareOutline } from "../icons";
   return (
     <div className="flex flex-col justify-center items-center w-[350px] p-5">
       <div
+      {...checkboxProps}
         onClick={() => setIsChecked(!isChecked)}
-        className="flex flex-row items-center mb-5 cursor-pointer"
-        {...checkboxProps}
+        className="flex flex-row items-center mb-5 cursor-pointer "
+
       >
         {icon === "right" ? (
           <>
             {isChecked ? (
-              <Checkbox color="white" size="20px"/>
+              <Checkbox  size="20px"/>
             ) : (
               <SquareOutline color="gray" size="20px"/>
             )}
-            <span className="ml-2.5 text-white">{label}</span>
+            <span className="ml-2.5 text-black">{label}</span>
           </>
         ) : (
           <>
-            <span className="mr-2.5 text-white">{label}</span>
+            <span className="mr-2.5 text-black">{label}</span>
             {isChecked ? (
-              <Checkbox color="white" size="20px"/>
+              <Checkbox  size="20px"/>
             ) : (
               <SquareOutline color="gray" size="20px"/>
             )}
@@ -78,6 +79,7 @@ import { Checkbox, SquareOutline } from "../icons";
       </div>
 
       <button
+      {...buttonProps}
         disabled={isButtonDisabled}
         onMouseEnter={() => isHoverEffectEnabled && setIsHovered(true)}
         onMouseLeave={() => isHoverEffectEnabled && setIsHovered(false)}
@@ -93,12 +95,12 @@ import { Checkbox, SquareOutline } from "../icons";
             : isHovered && isHoverEffectEnabled
             ? buttonStates.hover
             : buttonStates[state]
-        } flex items-center justify-center rounded text-center transition duration-200`}
-        {...buttonProps}
+        } flex items-center justify-center rounded text-center transition duration-200 ${buttonProps?.className}`}
+        
       >
         {state === "loading" ? (
           <div className="flex items-center justify-center">
-          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
         </div>
         ) : (
           <span className={`${isButtonDisabled ? "text-[#868686]" : "text-white"}`}>
