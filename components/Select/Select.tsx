@@ -9,6 +9,7 @@ import React, {
     HTMLAttributes,
 } from "react";
 import { ChevronDown } from "../icons";
+import { RectButton } from "../Button";
 
 interface SelectContextProps {
     selectedValue: string | null;
@@ -59,14 +60,16 @@ export const SelectTrigger = ({
     if (!ctx) throw new Error("SelectTrigger must be used within Select");
 
     return (
-        <button
+        <RectButton
             onClick={() => ctx.setIsOpen(!ctx.isOpen)}
-            className={`flex items-center justify-between border border-zinc-700 bg-zinc-900 text-white px-3 py-2 rounded-md shadow-sm focus:outline-none ${className} mt-2`}
+            className={`flex items-center justify-between ${className} `}
             {...rest}
         >
-            {children}
-            <ChevronDown className="w-4 h-4 ml-2 text-zinc-400" />
-        </button>
+            <span className="flex items-center">
+                {children}
+                <ChevronDown color="white" style={{marginLeft:"2rem"}} size="20px"/>   
+            </span>
+        </RectButton>
     );
 };
 
@@ -135,7 +138,7 @@ export const SelectContent = ({
     return (
         <div
             ref={contentRef}
-            className={`absolute z-50 w-full max-h-52 overflow-auto rounded-md bg-zinc-900 border border-zinc-700 text-white shadow-lg transition-all duration-150
+            className={`absolute z-50 w-full max-h-52 overflow-auto rounded-md bg-gray-50 border border-zinc-700 text-gray-800 shadow-lg transition-all duration-150
         ${placement === "bottom" ? "top-full mt-1" : "bottom-full mb-1"}
         ${className}
       `}
@@ -151,7 +154,7 @@ export const SelectGroup = ({ children }: { children: ReactNode }) => {
 
 export const SelectLabel = ({ children }: { children: ReactNode }) => {
     return (
-        <div className="px-2 py-1 text-xs uppercase tracking-wide text-zinc-400">
+        <div className="px-2 py-1 text-xs uppercase tracking-wide text-black font-semibold">
             {children}
         </div>
     );
@@ -178,8 +181,8 @@ export const SelectItem = ({
     return (
         <div
             onClick={handleSelect}
-            className={`cursor-pointer px-3 py-2 rounded-md hover:bg-zinc-700 transition-colors ${
-                isSelected ? "bg-zinc-700" : ""
+            className={`cursor-pointer px-3 py-2 rounded-md hover:bg-gray-200 transition-colors ${
+                isSelected ? "bg-gray-400" : ""
             }`}
         >
             {children}

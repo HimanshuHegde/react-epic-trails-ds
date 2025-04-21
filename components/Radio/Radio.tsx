@@ -25,9 +25,9 @@ export const Radio = ({
 
     return (
         <label
-            className={`flex items-center space-x-3 py-2 px-4 cursor-pointer transition-all duration-300 
-          ${checked ? "bg-zinc-900 text-white" : "bg-zinc-800 text-zinc-400"}
-          hover:bg-zinc-700 ${className}`}
+            className={`flex items-center space-x-3 py-2 px-4 cursor-pointer transition-all duration-300 bg-gray-50 
+          ${checked ? " text-black" : "text-gray-600"}
+          hover:bg-gray-200 ${className}`}
         >
             <input
                 type="radio"
@@ -39,10 +39,10 @@ export const Radio = ({
             />
             <div
                 className={`relative w-5 h-5 rounded-full border-2 
-            ${checked ? "border-white" : "border-zinc-600"}`}
+            ${checked ? "border-black" : "border-zinc-600"}`}
             >
                 <div
-                    className={`absolute inset-1 bg-white rounded-full transition-all duration-200 
+                    className={`absolute inset-1 bg-black rounded-full transition-all duration-200 
               ${checked ? "scale-100" : "scale-0"}`}
                 />
             </div>

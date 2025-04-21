@@ -61,7 +61,7 @@ export const Slider: React.FC<SliderProps> = ({
           style={{ left: `calc(${percentage}% - 10px)` }}
         />
       </div>
-      <div className="mt-2 text-center text-sm text-zinc-300">
+      <div className="mt-2 text-center text-sm text-gray-800">
         Value: {sliderValue}
       </div>
     </div>

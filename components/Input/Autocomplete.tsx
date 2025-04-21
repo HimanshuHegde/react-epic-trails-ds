@@ -78,7 +78,7 @@ export default function AutoComplete({
             {...props}
             className={`${
               Sizes[Size]
-            } p-[8px] placeholder:text-inputPlaceholder bg-white border-[3px] ${getBorderColor()} pr-[40px] outline-none flex-1 ${
+            } p-[8px] placeholder:text-inputPlaceholder bg-gray-50 border-[3px] rounded-md ${getBorderColor()} pr-[40px] outline-none flex-1 ${
               curved && "rounded-md "
             } ${props.className}`}
             disabled={State === "Loading"}

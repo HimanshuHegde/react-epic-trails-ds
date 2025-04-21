@@ -29,7 +29,7 @@ export const Switch = ({
       <span
         className={clsx(
           "relative inline-block w-12 h-6 transition-colors duration-300 rounded-full",
-          checked ? "bg-blue-600" : "bg-zinc-400",
+          checked ? "bg-black" : "bg-zinc-400",
           "mr-4" // Space between the switch and any adjacent content
         )}
       >

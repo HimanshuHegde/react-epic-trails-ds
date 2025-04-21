@@ -114,7 +114,7 @@ export const TooltipContent = ({
         <div
             ref={contentRef}
             className={`
-                absolute z-50 px-3 py-2 text-sm text-white bg-black rounded-md shadow-lg
+                absolute z-50 px-3 py-2 text-sm text-black bg-gray-50 rounded-md shadow-lg
                 ${getPositionClasses()}
                 ${className}
             `}

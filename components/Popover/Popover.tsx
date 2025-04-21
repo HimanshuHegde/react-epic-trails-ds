@@ -220,7 +220,7 @@ export const PopoverContent = ({
   const content = (
     <div 
       ref={contentRef}
-      className={`absolute z-50 bg-black border border-gray-800 rounded-md shadow-lg text-white ${className}`}
+      className={`absolute z-50 bg-gray-50 border border-gray-400 rounded-md shadow-lg text-white ${className}`}
       style={{
         top: `${position.top}px`,
         left: `${position.left}px`,

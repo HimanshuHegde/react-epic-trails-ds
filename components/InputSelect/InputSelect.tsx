@@ -24,7 +24,7 @@ export default function InputSelect({
   const dropdownRef = useRef<HTMLDivElement>(null);
 
   // Filter options based on search term
-  const filteredOptions = options.filter(option =>
+  const filteredOptions = options?.filter(option =>
     option.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -82,7 +82,7 @@ export default function InputSelect({
           onClick={() => setIsOpen(true)}
           placeholder={placeholder}
           readOnly={readonly}
-          className="w-full bg-[#e8e8e8] p-[8px] placeholder:text-inputPlaceholder outline-none pr-[40px] border-[3px]"
+          className="w-full bg-gray-50 p-[8px] placeholder:text-inputPlaceholder outline-none pr-[40px]"
         />
         {searchTerm && (
           <button
@@ -105,7 +105,7 @@ export default function InputSelect({
               <div
                 key={index}
                 onClick={() => handleOptionSelect(option)}
-                className="px-4 py-2 cursor-pointer hover:bg-gray-100"
+                className="px-4 py-2 cursor-pointer hover:bg-gray-400"
               >
                 {option}
               </div>

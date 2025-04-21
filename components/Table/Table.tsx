@@ -9,7 +9,7 @@ export const Table = ({
 }: HTMLAttributes<HTMLTableElement>) => {
     return (
         <div
-            className={clsx("overflow-x-auto rounded-lg shadow-sm bg-black", className)}
+            className={clsx("overflow-x-auto rounded-lg shadow-sm bg-gray-50", className)}
             {...props}
         >
             <table className="min-w-full text-sm table-auto border-separate border-spacing-0">
@@ -27,7 +27,7 @@ export const TableHeader = ({
 }: HTMLAttributes<HTMLTableSectionElement>) => {
     return (
         <thead
-            className={clsx("bg-zinc-800 text-zinc-200", className)}
+            className={clsx("bg-gray-400 text-zinc-200", className)}
             {...props}
         >
             {children}
@@ -56,7 +56,7 @@ export const TableFooter = ({
 }: HTMLAttributes<HTMLTableSectionElement>) => {
     return (
         <tfoot
-            className={clsx("bg-zinc-800 text-zinc-200", className)}
+            className={clsx("bg-gray-400 text-zinc-200", className)}
             {...props}
         >
             {children}
@@ -73,7 +73,7 @@ export const TableRow = ({
     return (
         <tr
             className={clsx(
-                "border-b border-zinc-700 transition-colors duration-200 hover:bg-zinc-700 rounded-lg",
+                "border-b border-zinc-700 transition-colors duration-200 hover:bg-gray-200 rounded-lg",
                 className
             )}
             {...props}
@@ -92,7 +92,7 @@ export const TableHead = ({
     return (
         <th
             className={clsx(
-                "py-3 px-4 text-left text-sm font-semibold text-zinc-400 uppercase tracking-wider",
+                "py-3 px-4 text-left text-sm font-semibold text-black uppercase tracking-wider",
                 className
             )}
             {...props}
@@ -111,7 +111,7 @@ export const TableCell = ({
 }: HTMLAttributes<HTMLTableCellElement> & { colSpan?: number }) => {
     return (
         <td
-            className={clsx("py-3 px-4 text-sm text-zinc-300", className)}
+            className={clsx("py-3 px-4 text-sm text-black", className)}
             colSpan={colSpan}
             {...props}
         >

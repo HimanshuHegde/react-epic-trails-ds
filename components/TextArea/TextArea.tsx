@@ -7,7 +7,7 @@ interface TextAreaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 export function TextArea({ className = "", ...props }: TextAreaProps) {
     return (
         <textarea
-            className={`w-full h-40 bg-black border border-gray-700 rounded-md p-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none transition-all duration-300 ${className}`}
+            className={`w-full h-40 bg-gray-50 rounded-md p-3 text-black placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black resize-none transition-all duration-300 ${className}`}
             {...props}
         />
     );
