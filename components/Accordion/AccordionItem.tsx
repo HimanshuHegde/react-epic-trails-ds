@@ -19,7 +19,7 @@ export const AccordionItem: React.FC<AccordionItemProps> = ({
 
   return (
     <div 
-      className={`border-b border-gray-800 last:border-b-0 ${className} ${disabled ? 'pointer-events-none bg-gray-900' : ''}`}
+      className={`border-b border-gray-400 last:border-b-0 ${className} ${disabled ? 'pointer-events-none bg-gray-900' : ''}`}
       data-state={!disabled && isActive ? 'open' : 'closed'}
       data-value={value}
       {...props}
