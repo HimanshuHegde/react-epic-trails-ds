@@ -29,27 +29,27 @@ const CalloutBanner= ({
   // Preset variants for easy styling
   const variants: Record<VariantType, { bg: string; text: string; border: string }> = {
     default: {
-      bg: `${theme==='primary'?'bg-black':'bg-white'}`,
+      bg: `${theme==='primary'?'bg-black':'bg-gray-50'}`,
       text: `${theme==='primary'?'text-white':'text-black'}`,
-      border: `${theme==='primary'?'border-black':'border-yellow-500'}`
+      border: `${theme==='primary'?'border-black':'border-gray-400'}`
     },
     info: {
-     bg: `${theme==='primary'?'bg-black':'bg-white'}`,
+     bg: `${theme==='primary'?'bg-black':'bg-gray-50'}`,
      text: `${theme==='primary'?'text-blue-300':'text-blue-700'}`,
       border: 'border-blue-700'
     },
     warning: {
-    bg: `${theme==='primary'?'bg-black':'bg-white'}`,
+    bg: `${theme==='primary'?'bg-black':'bg-gray-50'}`,
       text: 'text-orange-400',
       border: 'border-orange-700'
     },
     error: {
-        bg: `${theme==='primary'?'bg-black':'bg-white'}`,
+        bg: `${theme==='primary'?'bg-black':'bg-gray-50'}`,
       text: 'text-contentNegative',
       border: 'border-borderNegative'
     },
     success: {
-    bg: `${theme==='primary'?'bg-black':'bg-white'}`,
+    bg: `${theme==='primary'?'bg-black':'bg-gray-50'}`,
       text: 'text-contentPositive',
       border: 'border-borderPositive'
     }
