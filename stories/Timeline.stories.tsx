@@ -42,7 +42,7 @@ export const CustomLineThickness: Story = {
 
 export const WithCustomClass: Story = {
     args: {
-        className: "bg-gray-800 text-white",
+        className: "bg-gray-400 text-white",
         children: (
             <>
                 <TimelineStep completed={true}>Step 1: Completed</TimelineStep>

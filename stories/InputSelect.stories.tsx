@@ -6,6 +6,9 @@ const meta: Meta<typeof InputSelect> = {
     title: "Components/InputSelect",
     component: InputSelect,
     tags: ["autodocs"],
+    parameters: {
+        layout: "centered",
+    },
     argTypes: {
         options: {
             control: "object",
@@ -37,6 +40,7 @@ const Wrapper = (args: any) => {
     return (
         <InputSelect
             {...args}
+            options={['football', 'basketball', 'tennis']}
             value={selected}
             onChange={(val) => {
                 setSelected(val);

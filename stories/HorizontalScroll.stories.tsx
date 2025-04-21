@@ -23,7 +23,7 @@ const ScrollItems = () => (
         {Array.from({ length:  30}).map((_, i) => (
             <div
                 key={i}
-                className="!w-48 !h-48 bg-blue-500 text-white flex items-center justify-center "
+                className="!w-48 !h-48 bg-black text-white flex items-center justify-center "
             >
                 Item {i + 1}
             </div>
@@ -39,9 +39,13 @@ export const Playground: Story = {
 };
 
 export const Default: Story = {
-    render: () => (
+    args :{
+        showArrows: true,
+    },
+    
+    render: ({showArrows}) => (
         <div className="w-full max-w-3xl mx-auto">
-            <HorizontalScroll showArrows>
+            <HorizontalScroll showArrows={showArrows}>
                 <ScrollItems />
             </HorizontalScroll>
         </div>
@@ -49,9 +53,12 @@ export const Default: Story = {
 };
 
 export const WithoutArrows: Story = {
-    render: () => (
+    args :{
+        showArrows: false,
+    },
+    render: ({showArrows}) => (
         <div className="w-full max-w-3xl mx-auto">
-            <HorizontalScroll showArrows={false}>
+            <HorizontalScroll showArrows={showArrows}>
                 <ScrollItems />
             </HorizontalScroll>
         </div>

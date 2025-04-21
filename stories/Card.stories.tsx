@@ -48,7 +48,7 @@ export const WithActions: Story = {
     render: () => (
         <CardWithActions
             actions={
-                <button className="text-sm text-blue-400">Click Me</button>
+                <button className="text-sm text-black">Click Me</button>
             }
         >
             <p className="p-4">Card with action button.</p>
