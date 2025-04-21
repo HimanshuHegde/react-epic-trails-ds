@@ -47,16 +47,23 @@ const Wrapper = (args: any) => {
 };
 
 export const Playground: Story = {
+    args: {
+        options: ["Option 1", "Option 2", "Option 3"],
+        value: "Option 2",
+    },
     render: (args) => <Wrapper {...args} />,
 };
 
 export const ReadOnlyExample: Story = {
-    render: () => (
+    args:{
+        options:["Apple", "Banana", "Cherry"],
+        value:"Banana",
+        onChange:() => {},
+        readonly:true,
+    },
+    render: (args) => (
         <InputSelect
-            options={["Apple", "Banana", "Cherry"]}
-            value={"Banana"}
-            onChange={() => {}}
-            readonly={true}
+            {...args}
         />
     ),
 };
