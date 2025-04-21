@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Drawer, DrawerPosition } from "@/components/Drawer";
 import { DrawerProvider, useDrawer } from "@/components/Drawer";
+import { RectButton } from "@/components";
 
 const meta: Meta<typeof Drawer> = {
     title: "Components/Drawer",
@@ -19,7 +20,7 @@ export const Default: Story = {
     render: () => {
         const [open, setOpen] = useState(false);
         return (
-            <div className="bg-gray-950 text-white p-6">
+            <div className="text-white p-6">
                 <button
                     onClick={() => setOpen(true)}
                     className="bg-gray-800 px-4 py-2 rounded"
@@ -36,12 +37,15 @@ export const Default: Story = {
                 >
                     <div className="space-y-3">
                         <p>This is a simple drawer.</p>
-                        <button
+                        <div className="flex justify-center">
+                        <RectButton
+                            variant="primary"
+                            size="small"
                             onClick={() => setOpen(false)}
-                            className="w-full px-4 py-2 bg-gray-700 rounded"
                         >
                             Close
-                        </button>
+                        </RectButton>
+                        </div>
                     </div>
                 </Drawer>
             </div>
@@ -58,7 +62,7 @@ export const WithControls: Story = {
     render: ({ position, size, title }) => {
         const [open, setOpen] = useState(false);
         return (
-            <div className="bg-gray-950 text-white p-6">
+            <div className=" text-white p-6">
                 <button
                     onClick={() => setOpen(true)}
                     className="bg-gray-800 px-4 py-2 rounded"
@@ -79,12 +83,15 @@ export const WithControls: Story = {
                             <strong>{position}</strong> with size{" "}
                             <strong>{size}</strong>.
                         </p>
-                        <button
+                        <div className="flex justify-center">
+                        <RectButton
+                            variant="primary"
+                            size="small"
                             onClick={() => setOpen(false)}
-                            className="w-full px-4 py-2 bg-gray-700 rounded"
                         >
                             Close
-                        </button>
+                        </RectButton>
+                        </div>
                     </div>
                 </Drawer>
             </div>
@@ -115,7 +122,7 @@ const DrawerContextStory: React.FC = () => {
     const { open } = useDrawer();
 
     return (
-        <div className="bg-gray-950 text-white p-6">
+        <div className=" text-white p-6">
             <button
                 className="bg-gray-800 px-4 py-2 rounded"
                 onClick={() =>

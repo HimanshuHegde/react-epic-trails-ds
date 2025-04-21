@@ -117,7 +117,7 @@ export const Drawer: React.FC<DrawerProps> = ({
       <div
         ref={drawerRef}
         className={`
-          fixed bg-black text-gray-100 shadow-xl transition-transform duration-300 ease-in-out
+          fixed bg-gray-50 text-black shadow-xl transition-transform duration-300 ease-in-out
           ${positionClasses[position]}
           ${animationClass ? animationClasses[position] : ''}
           ${sizeClasses[position][size]}
@@ -126,7 +126,7 @@ export const Drawer: React.FC<DrawerProps> = ({
       >
         <div className="flex flex-col h-full">
           <div className={`flex justify-between items-center p-4 border-b border-gray-800 ${headerClassName}`}>
-            <h2 className="text-xl font-semibold text-white">{title}</h2>
+            <h2 className="text-xl font-semibold">{title}</h2>
             <button
               onClick={onClose}
               className={`p-2 rounded-full transition-colors text-gray-300 hover:text-white ${closeButtonClassName}`}
@@ -135,7 +135,7 @@ export const Drawer: React.FC<DrawerProps> = ({
             <Close/>
             </button>
           </div>
-          <div className={`flex-1 overflow-auto ${bodyClassName}`}>
+          <div className={`flex-1 overflow-auto ml-4 ${bodyClassName}`}>
             {children}
           </div>
         </div>

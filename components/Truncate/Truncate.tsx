@@ -12,7 +12,7 @@ export function Truncate({
     return (
         <div
             className={
-                "text-white overflow-hidden text-ellipsis whitespace-nowrap p-2 " +
+                "overflow-hidden text-ellipsis whitespace-nowrap p-2 " +
                 className
             }
             style={{ maxWidth: maxWidth || "100%" }}

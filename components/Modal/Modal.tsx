@@ -98,7 +98,7 @@ export const Modal: React.FC<ModalProps> = ({
       <div
         ref={modalRef}
         className={clsx(
-          "relative w-full mx-4 text-left bg-black text-white rounded-xl overflow-hidden",
+          "relative w-full mx-4 text-left bg-gray-50 text-black rounded-xl overflow-hidden",
           sizeClasses[size],
           isMobileFullPage && "min-h-screen rounded-none",
           suppressed
@@ -143,7 +143,7 @@ export const Modal: React.FC<ModalProps> = ({
             <div className="mt-6">
               {title && <h2 className="text-xl font-semibold">{title}</h2>}
               {description && (
-                <p className="text-sm text-gray-400 mt-1">{description}</p>
+                <p className="text-sm text-gray-800 mt-1">{description}</p>
               )}
             </div>
           )

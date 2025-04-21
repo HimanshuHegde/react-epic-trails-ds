@@ -42,7 +42,7 @@ export const List: React.FC<ListProps> = ({
   return (
     <ul
       className={`
-        flex flex-col ${sizeClasses[size]} ${spaceAfterClasses[spaceAfter]} ${spacingClasses[spacing]} ${typeClasses[type]} bg-black p-4
+        flex flex-col ${sizeClasses[size]} ${spaceAfterClasses[spaceAfter]} ${spacingClasses[spacing]} ${typeClasses[type]} bg-gray-50 p-4
       `}
     >
       {children}

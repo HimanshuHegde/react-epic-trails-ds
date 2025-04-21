@@ -47,8 +47,8 @@ export const Pagination: React.FC<PaginationProps> = ({
           className={clsx(
             "px-3 py-2 rounded-md transition",
             currentPage === page
-              ? theme == "primary"?"text-white ":"text-black"
-              : theme == "primary"?"text-black ":"text-white"
+              ? theme == "primary"?"text-gray-400 ":"text-black"
+              : theme == "secondary"?"text-gray-400 ":"text-black"
           )}
         >
           {page}

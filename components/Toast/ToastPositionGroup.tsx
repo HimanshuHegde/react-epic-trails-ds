@@ -75,12 +75,12 @@ const ToastItem: React.FC<ToastItemProps> = ({ toast, onDismiss }) => {
 
     return (
         <div
-            className={`relative flex items-center justify-between p-3 mb-2 rounded-md shadow-lg text-white w-full max-w-md bg-gray-900 border-l-4 ${getBorderColor(
+            className={`relative flex items-center justify-between p-3 mb-2 rounded-md shadow-lg text-black w-full max-w-md bg-gray-50 border-l-4 ${getBorderColor(
                 type
             )} overflow-hidden animate-fadeIn`}
         >
             {/* Progress indicator */}
-            <div className="absolute bottom-0 left-0 h-1 w-full bg-gray-800">
+            <div className="absolute bottom-0 left-0 h-1 w-full bg-gray-50">
                 <div
                     ref={progressRef}
                     className={`h-full ${getProgressColor(type)}`}
@@ -91,7 +91,7 @@ const ToastItem: React.FC<ToastItemProps> = ({ toast, onDismiss }) => {
             <div className="flex-1 mr-3">{message}</div>
             {closable && (
                 <button
-                    className="text-white opacity-70 hover:opacity-100 transition-opacity"
+                    className="text-black opacity-70 hover:opacity-100 transition-opacity"
                     onClick={(e) => {
                         e.stopPropagation();
                         onDismiss(id);

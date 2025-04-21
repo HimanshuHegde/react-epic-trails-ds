@@ -44,7 +44,7 @@ const IconGrid: React.FC<IconProps> = ({ size, color, height, width }) => {
   const commonProps = { size, color, height, width };
 
   return (
-    <div className="p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center text-white">
+    <div className="p-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 text-center">
       <div>
         <InfoIcon {...commonProps} />
         <p className="mt-2 text-sm">InfoIcon</p>

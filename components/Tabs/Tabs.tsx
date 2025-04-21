@@ -48,7 +48,7 @@ export const TabList = ({
     return (
         <div
             className={clsx(
-                "flex items-center gap-4 border-b border-zinc-700 bg-zinc-900 p-1 rounded-t-md",
+                "flex items-center gap-4 border-b border-gray-600 bg-gray-400 p-1 rounded-t-md",
                 className
             )}
             {...props}
@@ -91,9 +91,9 @@ export const Tab = ({
         top: "rounded-t-md",
     };
 
-    const activeStyle = "text-white border-b-2 border-cyan-400";
+    const activeStyle = "text-black border-b-2 border-black";
     const inactiveStyle =
-        "text-zinc-400 hover:text-white hover:border-b-2 hover:border-zinc-600";
+        "text-gray-800 hover:text-white hover:border-b-2 hover:border-white";
 
     return (
         <button
@@ -137,7 +137,7 @@ export const TabPanel = ({
     return (
         <div
             className={clsx(
-                "p-4 bg-zinc-800 text-zinc-200 rounded-md border border-zinc-700",
+                "p-4 bg-gray-50 text-black rounded-md ",
                 className
             )}
             {...props}

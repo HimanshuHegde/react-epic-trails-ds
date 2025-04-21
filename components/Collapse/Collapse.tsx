@@ -43,17 +43,17 @@ export default function Collapse({
     const childrenArray = Children.toArray(children);
 
     return (
-        <div className="w-full border-gray-700 border-b">
-            <div className="flex bg-black text-white items-center px-4 gap-8 py-4 justify-between">
+        <div className="w-full border-gray-400 border-b">
+            <div className="flex bg-gray-50 text-black font-semibold items-center px-4 gap-8 py-4 justify-between">
                 <div className="flex gap-4 items-center">
                     <span className="text-1xl">{label}</span>
                     {badges.map((e, idx) => (
-                        <Badge key={idx} size="md" className="bg-gray-800 px-4">
+                        <Badge key={idx} size="md" className="bg-gray-400 px-4">
                             {e}
                         </Badge>
                     ))}
                 </div>
-                <div className="text-white flex gap-6">
+                <div className="text-black flex gap-6">
                     {actionButtonLabel && (
                         <button onClick={actionFunction}>
                             <u>{actionButtonLabel}</u>
@@ -61,18 +61,18 @@ export default function Collapse({
                     )}
                     <button onClick={toggleExpand} className="flex items-center">
                         {isOpen ? (
-                            <ChevronUpOutline color="white" />
+                            <ChevronUpOutline  />
                         ) : (
-                            <ChevronDownOutline color="white" />
+                            <ChevronDownOutline  />
                         )}
                     </button>
                 </div>
             </div>
-            <div className="bg-black text-white">
+            <div className="bg-gray-50 ">
                 {isOpen &&
                     childrenArray.map((child, index) => (
                         <Fragment key={index}>
-                            <div className="px-4 py-2 text-gray-300">{child}</div>
+                            <div className="px-4 py-2 text-gray-800">{child}</div>
                         </Fragment>
                     ))}
             </div>

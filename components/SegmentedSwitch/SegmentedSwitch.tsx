@@ -22,7 +22,7 @@ export const SegmentedSwitch = ({
 
     return (
         <div
-            className={`flex border border-zinc-500 w-fit rounded-full bg-zinc-800 p-1 my-2 ${className}`}
+            className={`flex border w-fit rounded-full p-1 my-2 border-gray-800 ${className}`}
         >
             {options.map((option, index) => (
                 <div
@@ -32,7 +32,7 @@ export const SegmentedSwitch = ({
         ${
             selected === option
                 ? "bg-black text-white"
-                : "bg-zinc-800 text-zinc-300"
+                : "bg-gray-50 text-gray-800"
         }
         ${index === 0 ? "rounded-l-full" : ""}
         ${index === options.length - 1 ? "rounded-r-full" : ""}

@@ -27,7 +27,7 @@ export const AccordionContent: React.FC<AccordionContentProps> = ({
   return (
     <div
       ref={contentRef}
-      className={`bg-black text-gray-300 overflow-hidden transition-all duration-300 ease-in-out ${className}`}
+      className={`bg-gray-50 text-gray-700 overflow-hidden transition-all duration-300 ease-in-out ${className}`}
       style={{ 
         maxHeight: isActive ? `${height}px` : '0',
         opacity: isActive ? 1 : 0,

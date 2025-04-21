@@ -59,11 +59,11 @@ export const Navbar: React.FC<NavbarProps> = ({
         className={clsx(
           "w-full fixed top-0 z-50 transition-all duration-300",
           hidden && "transform -translate-y-full",
-          transparentBgAtTop && !scrolled ? "bg-transparent" : "bg-black",
+          transparentBgAtTop && !scrolled ? "bg-transparent" : "bg-gray-50",
           bottomClass
         )}
       >
-        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-white">
+        <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between text-black">
           {/* Logo or openTitle */}
           <div className="text-lg font-semibold flex items-center gap-2">
             {logo ? logo : <span>{openTitle}</span>}
@@ -101,14 +101,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         size="md"
         title="Settings"
         overlayClassName="md:hidden bg-black/60"
-        className="bg-black text-white"
+        className="bg-gray-50 text-black font-semibold"
       >
-        <div className="flex flex-col gap-6 text-sm pl-4 py-4 bg-black">
+        <div className="flex flex-col gap-6 text-sm pl-4 py-4 bg-gray-50">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="flex items-center text-gray-300 hover:text-white transition-colors duration-200 py-2"
+              className="flex items-center text-gray-800 hover:text-gray-300 transition-colors duration-200 py-2"
             >
               {link.label}
             </a>

@@ -16,7 +16,7 @@ export const Accordion: React.FC<AccordionProps> = ({
 }) => {
   return (
     <AccordionProvider allowMultiple={allowMultiple} defaultActiveItems={defaultActiveItems}>
-      <div className={`w-full bg-primaryA text-white overflow-hidden ${className}`} {...props}>
+      <div className={`w-full bg-gray-50 text-black overflow-hidden ${className}`} {...props}>
         {children}
       </div>
     </AccordionProvider>

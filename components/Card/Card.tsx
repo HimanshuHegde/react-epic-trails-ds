@@ -58,8 +58,8 @@ export const CardSection: React.FC<CardSectionProps> = ({
 
   return (
     <div className={`border-b border-gray-200 last:border-0 ${className} w-full`}>
-      <div className="flex items-center justify-between px-4 py-3">
-        <h3 className="font-medium text-gray-400">{title}</h3>
+      <div className="flex items-center justify-between px-4 py-3 text-gray-700">
+        <h3 className="font-medium text-black">{title}</h3>
         {expandable && (
           <button 
             onClick={handleToggle}
@@ -67,7 +67,7 @@ export const CardSection: React.FC<CardSectionProps> = ({
             aria-expanded={isExpanded}
             aria-label={isExpanded ? "Collapse section" : "Expand section"}
           >
-            {isExpanded ? <ChevronUpOutline color='white'/>: <ChevronDownOutline color='white'/>}
+            {isExpanded ? <ChevronUpOutline color='black'/>: <ChevronDownOutline color='black'/>}
           </button>
         )}
       </div>
@@ -110,7 +110,7 @@ export const Card: React.FC<CardProps> = ({
   }
 
   return (
-    <div className={`bg-black text-white shadow-md overflow-hidden flex justify-around ${className} text`}>
+    <div className={`bg-gray-50 text-black overflow-hidden flex justify-around ${className} text`}>
         {loading ? (
         <LoadingSpinner />
       ) : (
@@ -126,7 +126,7 @@ export const Card: React.FC<CardProps> = ({
             className="text-white hover:text-gray-600 focus:outline-none flex justify-center align-top"
             aria-label="Close"
           >
-            <Close color='white' size='20px'/>
+            <Close color='black' size='20px'/>
           </button>
         </div>
       )}

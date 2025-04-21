@@ -38,13 +38,13 @@ export const Default: Story = {
             { label: "About", href: "#about" },
             { label: "Contact", href: "#contact" },
         ],
-        logo: <span className="text-white font-bold text-lg">MyLogo</span>,
+        logo: <span className="text-black font-bold text-lg">MyLogo</span>,
         actions: <RectButton size="small">Login</RectButton>,
     },
     render: (args) => (
         <div className="min-h-[200vh] bg-gray-900 text-white">
             <Navbar {...args} />
-            <main className="p-8 pt-96">
+            <main className="p-8 !pt-16">
                 <h1 className="text-3xl font-bold">Welcome to the Page</h1>
                 <p className="mt-4">
                     Scroll to test `hideOnScroll` and `transparentBgAtTop`

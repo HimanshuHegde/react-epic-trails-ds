@@ -23,7 +23,7 @@ export default function CheckBox({
 }: CheckBoxProps) {
     const [check , setCheck] = useState<boolean>(checked||false);
     return (
-        <div className={`flex gap-2 p-2 ${disabled ? 'cursor-not-allowed text-gray-400' : ''} bg-black text-white`}>
+        <div className={`flex gap-2 p-2 ${disabled ? 'cursor-not-allowed text-gray-400' : ''} bg-gray-50 text-black`}>
 
             <div id={name} className={`${disabled ? 'cursor-not-allowed text-gray-400' : 'cursor-pointer'}`}>
                 <span className={`flex gap-2`}>
@@ -34,16 +34,16 @@ export default function CheckBox({
 
                         {checked ?? check ?        
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400 cursor-not-allowed' : ''}` } onClick={e=>{if(!disabled)(setCheck(!check))}}>
-                                <Checkbox color="white" height="20px"/>
+                                <Checkbox color="black" height="20px"/>
                             </button>
                             : 
                             <button id={name} className={`flex ${error ? 'text-red-500' : ''} ${disabled ? 'text-gray-400 cursor-not-allowed' : ''}`} onClick={e=>{if(!disabled)(setCheck(!check))}}>
-                                <SquareOutline color="white"/>
+                                <SquareOutline color="black"/>
                             </button>}
                     </span>
-                    <label  htmlFor={name} className="flex flex-col leading-none gap-1 text-white">
+                    <label  htmlFor={name} className="flex flex-col leading-none gap-1 text-black">
                         {label}
-                        <div className="text-sm text-gray-400 leading-none">{info}</div>
+                        <div className="text-sm text-gray-700 leading-none">{info}</div>
                     </label>
                 </span>
             </div>

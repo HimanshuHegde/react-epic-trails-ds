@@ -22,8 +22,8 @@ export const ListItem: React.FC<ListItemProps> = ({
         </div>
       )}
       <div>
-        {label && <div className="font-semibold text-white">{label}</div>}
-        <div >{children}</div>
+        {label && <div className="font-semibold text-black">{label}</div>}
+        <div className="text-gray-800">{children}</div>
       </div>
     </li>
   );

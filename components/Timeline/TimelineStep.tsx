@@ -24,7 +24,7 @@ export function TimelineStep({
             >
                 {completed && (
                     <svg
-                        className="w-4 h-4 text-white"
+                        className="w-4 h-4 text-green-black"
                         fill="none"
                         stroke="currentColor"
                         viewBox="0 0 24 24"
@@ -39,11 +39,11 @@ export function TimelineStep({
                     </svg>
                 )}
                 {current && !completed && (
-                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <div className="w-3 h-3 rounded-full bg-gray-800"></div>
                 )}
             </div>
 
-            <div className="mt-2 text-center text-white">{children}</div>
+            <div className="mt-2 text-center text-gray-800">{children}</div>
         </div>
     );
 }

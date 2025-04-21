@@ -14,7 +14,7 @@ import { BreadcrumbsItemProps } from './types';
   };
 
   const commonProps = {
-    className: `text-sm font-medium hover:text-gray-400 text-white transition-colors ${className}`,
+    className: `text-sm font-medium hover:text-gray-400 text-black transition-colors ${className}`,
     onClick: handleClick,
     ...props,
   };
