@@ -62,7 +62,7 @@ export default function NormalText({
   return (
     <div className="flex flex-col gap-2">
       {Label ? (
-        <div className="text-sm text-white">
+        <div className="text-sm text-gray-800">
           <text>{Label}</text>
         </div>
       ) : null}
@@ -147,7 +147,7 @@ export default function NormalText({
       </div>
       </div>
       {Hint ? (
-        <div className="text-sm text-inputHint text-white">
+        <div className="text-sm text-inputHint text-gray-800">
           <text>{Hint}</text>
         </div>
       ) : null}
