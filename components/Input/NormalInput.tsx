@@ -69,7 +69,7 @@ export default function NormalText({
       <div className={`relative ${Sizes[Size]} `}>
         <input
           {...props}
-          className={`bg-gray-50 p-[8px] placeholder:text-inputPlaceholder outline-none pr-[40px] border-[3px] ${State==="Disabled" && "cursor-not-allowed text-gray-300"} ${
+          className={`bg-gray-50 p-[8px] placeholder:text-gray-400 outline-none pr-[40px] border-[3px] ${State==="Disabled" && "cursor-not-allowed text-gray-300"} ${
             props.type == "file" && "hidden"
           } ${getBorderColor()} ${curved && "rounded-md"} ${Sizes[Size]} ${
             props.className
@@ -96,7 +96,7 @@ export default function NormalText({
         {props.type === "file" && (
           <label
             htmlFor={id}
-            className={`bg-gray-50 p-[8px] placeholder:text-inputPlaceholder outline-none  border-[3px] ${Sizes[Size]} ${getBorderColor()} ${
+            className={`bg-gray-50 p-[8px] placeholder:text-gray-400 outline-none  border-[3px] ${Sizes[Size]} ${getBorderColor()} ${
               curved && "rounded-md"
             } ${
               Sizes[Size]
