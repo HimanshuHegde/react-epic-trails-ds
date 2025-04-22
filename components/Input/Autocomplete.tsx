@@ -67,7 +67,7 @@ export default function AutoComplete({
   return (
     <div className="flex flex-col gap-2 relative w-[375px]">
       {Label && (
-        <div className="text-sm text-white">
+        <div className="text-sm text-gray-800">
           <p>{Label}</p>
         </div>
       )}
@@ -159,7 +159,7 @@ export default function AutoComplete({
             <CheckmarkCircle size="16px" color="#22c55e" />
           )}
           <p
-            className={`text-white ${State === "Error" && "!text-contentNegative"} ${
+            className={`text-gray-800 ${State === "Error" && "!text-contentNegative"} ${
               State === "Success" && "!text-contentPositive"
             }`}
           >
