@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { RadioGroup } from "@/components/RadioGroup";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof RadioGroup> = {
     title: "Components/RadioGroup",
@@ -13,6 +14,9 @@ const meta: Meta<typeof RadioGroup> = {
         className: { control: "text" },
         onChange: { action: "changed" },
     },
+    args:{
+        onChange: fn(),
+    }
 };
 
 export default meta;
