@@ -12,7 +12,7 @@ type CalloutBannerProps ={
   variant?: VariantType;
   className?: string;
   theme?:'primary'|'secondary';
-  onClick?: () => void|undefined
+  onClick?: () => any
 }
 
 const CalloutBanner= ({
