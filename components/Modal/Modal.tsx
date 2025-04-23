@@ -12,7 +12,6 @@ type ModalProps = {
   illustration?: React.ReactNode;
   showSection?: boolean;
   fixedFooter?: boolean;
-  mobileHeader?: boolean;
   size?: "small" | "medium" | "large";
   title?: string;
   description?: string;
@@ -44,7 +43,6 @@ export const Modal: React.FC<ModalProps> = ({
   illustration,
   showSection = true,
   fixedFooter = false,
-  mobileHeader = false,
   size = "medium",
   title,
   description,
