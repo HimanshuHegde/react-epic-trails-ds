@@ -39,13 +39,13 @@ export const Default: Story = {
     },
     render: (args) => (
         <Lists {...args}>
-            <ListItem icon={<CheckmarkCircle color="white"/>} label="Feature 1">
+            <ListItem icon={<CheckmarkCircle color="black"/>} label="Feature 1">
                 Supports TypeScript and JSX
             </ListItem>
-            <ListItem icon={<CheckmarkCircle color="white"/>} label="Feature 2">
+            <ListItem icon={<CheckmarkCircle color="black"/>} label="Feature 2">
                 Easily customizable
             </ListItem>
-            <ListItem icon={<CheckmarkCircle color="white"/>} label="Feature 3">
+            <ListItem icon={<CheckmarkCircle color="black"/>} label="Feature 3">
                 Works with Storybook
             </ListItem>
         </Lists>

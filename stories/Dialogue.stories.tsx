@@ -74,8 +74,12 @@ export const ImageDown: Story = {
 };
 
 export const NoImage: Story = {
-    render: () => (
-        <Dialogue title="Simple Dialogue" description="No image is shown here.">
+    args: {
+        title: "Simple Dialogue",
+        description: "No image is shown here.",
+    },
+    render: (args) => (
+        <Dialogue {...args}>
             <RectButton variant="primary">Primary</RectButton>
             <RectButton variant="secondary">Secondary</RectButton>
         </Dialogue>

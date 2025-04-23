@@ -48,7 +48,7 @@ export const Default: Story = {
     },
 };
 
-export const InfoBanner: Story = {
+export const SecondaryInfoBanner: Story = {
     args: {
         title: "Information",
         content: "Your trial period is about to expire.",

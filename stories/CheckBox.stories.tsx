@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { CheckBox } from "@/components/CheckBox";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof CheckBox> = {
     title: "Components/CheckBox",
@@ -15,6 +16,7 @@ const meta: Meta<typeof CheckBox> = {
         name: { control: "text" },
         value: { control: "text" },
         children: { control: "text" },
+        onChange: { action: "change" },
     },
 };
 
@@ -24,7 +26,6 @@ type Story = StoryObj<typeof CheckBox>;
 // ✅ Interactive with controls
 export const Playground: Story = {
     args: {
-        checked: false,
         label: "I agree to the terms",
         info: "You can read the terms and conditions here.",
         error: false,
@@ -38,35 +39,38 @@ export const Playground: Story = {
 // ✅ Static demos below
 
 export const Default: Story = {
-    args:{
-        label: "Default Checkbox"
+    args: {
+        label: "Default Checkbox",
     },
 };
 
 export const Checked: Story = {
-    render: (args) => <CheckBox label="Checked checkbox" checked {...args}/>,
+    args: {
+        label: "Checked checkbox",
+        checked: true,
+    },
 };
 
 export const WithInfo: Story = {
     args: {
-        label:"Enable updates",
-        info:"You will receive email notifications."
+        label: "Enable updates",
+        info: "You will receive email notifications.",
     },
 };
 
 export const ErrorState: Story = {
-    args:{
-        label:"Accept terms",
+    args: {
+        label: "Accept terms",
         error: true,
-        info:"You must accept terms to continue."
-    }
+        info: "You must accept terms to continue.",
+    },
 };
 
 export const Disabled: Story = {
     args: {
         label: "Diabled checkbox",
         disabled: true,
-        info:"This option is currently unavailable."
+        info: "This option is currently unavailable.",
     },
 };
 

@@ -47,11 +47,13 @@ export const WithBadges: Story = {
 };
 
 export const WithActionButton: Story = {
+    args:{
+        label:"Collapse with Action",
+        actionButtonLabel:"Take Action",
+        actionFunction:() => alert("Action button clicked!")
+    },
     render: (args) => (
         <Collapse
-            label="Collapse with Action"
-            actionButtonLabel="Take Action"
-            actionFunction={() => alert("Action button clicked!")}
             {...args}
         >
             Actionable content area.
@@ -60,8 +62,12 @@ export const WithActionButton: Story = {
 };
 
 export const InitiallyExpanded: Story = {
+    args:{
+        label:"Expanded on Load",
+        defaultExpanded:true
+    },
     render: (args) => (
-        <Collapse label="Expanded on Load" defaultExpanded {...args}>
+        <Collapse {...args}>
             This starts open.
         </Collapse>
     ),
