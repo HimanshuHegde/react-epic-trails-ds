@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { CalloutBanner } from "@/components/CalloutBanner";
+import { fn } from "@storybook/test";
 
 const meta = {
     title: "Components/CalloutBanner",
@@ -32,6 +33,9 @@ const meta = {
         },
         onClick: { action: "clicked" },
     },
+    args: {
+        onClick: fn()
+    }
 } satisfies Meta<typeof CalloutBanner>;
 
 export default meta;
@@ -73,6 +77,5 @@ export const WarningBannerWithClick: Story = {
         title: "Warning",
         content: "Please review the warnings before continuing.",
         variant: "warning",
-        onClick: () => console.log("CalloutBanner clicked"),
     },
 };
