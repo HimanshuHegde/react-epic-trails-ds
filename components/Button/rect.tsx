@@ -61,6 +61,7 @@ const RectButton = ({
           ? states.hover 
           : states[state]
       } flex items-center justify-center ${props.className}`}
+      aria-label={state==="loading"?"loading":""}
     >
       {state === "loading" ? (
         <div>
