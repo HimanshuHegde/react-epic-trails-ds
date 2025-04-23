@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { AutoComplete } from "@/components/Input";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof AutoComplete> = {
     title: "Components/AutoComplete",
@@ -18,6 +19,9 @@ const meta: Meta<typeof AutoComplete> = {
         Hint: { control: "text" },
         curved: { control: "boolean" },
     },
+    args: {
+        onChange: fn(),
+    }
 };
 
 export default meta;
