@@ -16,11 +16,13 @@ export default function AutoComplete({
   value = "",
   input = [],
   curved = false,
+  id,
   ...props
 }: AInputProp) {
-  const [inputValue, setInputValue] = useState(value || props.defaultValue);
+  const [inputValue, setInputValue] = useState(value || props.defaultValue || "");
   const [isFocused, setIsFocused] = useState(false);
   const [suggestions, setSuggestions] = useState<string[]>([]);
+  const inputId = id || "input"+Math.random();
 
   const handleInputChange = (text: string) => {
     setInputValue(text);
@@ -68,7 +70,7 @@ export default function AutoComplete({
     <div className="flex flex-col gap-2 relative w-[375px]">
       {Label && (
         <div className="text-sm text-white">
-          <p>{Label}</p>
+          <label htmlFor={inputId}>{Label}</label>
         </div>
       )}
 
@@ -76,12 +78,14 @@ export default function AutoComplete({
         <div className="flex-row items-center w-[375px]">
           <input
             {...props}
+            id={inputId}
             className={`${
               Sizes[Size]
-            } p-[8px] placeholder:text-inputPlaceholder bg-gray-50 border-[3px] rounded-md ${getBorderColor()} pr-[40px] outline-none flex-1 ${
+            } p-[8px] placeholder:text-inputPlaceholder bg-gray-50 border-[3px] ${getBorderColor()} pr-[40px] outline-none flex-1 ${
               curved && "rounded-md "
             } ${props.className}`}
-            disabled={State === "Loading"}
+            disabled={props.disabled || 
+              State === "Loading"}
             value={inputValue}
             onFocus={(e) => {
               setIsFocused(true);
