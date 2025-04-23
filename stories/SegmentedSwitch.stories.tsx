@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { useState } from "react";
 import { SegmentedSwitch } from "@/components/SegmentedSwitch";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof SegmentedSwitch> = {
     title: "Components/SegmentedSwitch",
@@ -12,6 +13,9 @@ const meta: Meta<typeof SegmentedSwitch> = {
         className: { control: "text" },
         onChange: { action: "changed" },
     },
+    args: {
+        onChange: fn(),
+    }
 };
 
 export default meta;
