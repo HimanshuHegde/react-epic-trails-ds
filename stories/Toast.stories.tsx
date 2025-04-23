@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { ToastContainer, PositionGroup } from "@/components/Toast";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof ToastContainer> = {
     title: "Components/Toast",
@@ -10,6 +11,9 @@ const meta: Meta<typeof ToastContainer> = {
         toasts: { control: "object" },
         onDismiss: { action: "dismissed" },
     },
+    args: {
+        onDismiss: fn(),
+    }
 };
 
 export default meta;
