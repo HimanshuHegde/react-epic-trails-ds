@@ -5,7 +5,7 @@ export type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
   size?: "fit"|"small" | "medium" | "large"|"full";
   icon?: "right" | "left";
-  state?: "default" | "pressed" | "hover" | "disabled" | "loading";
+  state?: "default" | "pressed" | "hover" | "loading";
   disabled?: boolean;
   background?: string | null;
   children?: React.ReactNode;
