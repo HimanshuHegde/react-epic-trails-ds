@@ -53,9 +53,11 @@ import { Checkbox, SquareOutline } from "../icons";
     <div className="flex flex-col justify-center items-center w-[350px] p-5">
       <div
       {...checkboxProps}
-        onClick={() => setIsChecked(!isChecked)}
+        onClick={(event) => {setIsChecked(!isChecked)
+          checkboxProps?.onClick?.(event);}
+        }
         className="flex flex-row items-center mb-5 cursor-pointer "
-
+        
       >
         {icon === "right" ? (
           <>
@@ -83,7 +85,9 @@ import { Checkbox, SquareOutline } from "../icons";
         disabled={isButtonDisabled}
         onMouseEnter={() => isHoverEffectEnabled && setIsHovered(true)}
         onMouseLeave={() => isHoverEffectEnabled && setIsHovered(false)}
-        onClick={handlePress}
+        onClick={(event)=>{handlePress
+          buttonProps?.onClick?.(event);
+        }}
         style={{ backgroundColor: background || undefined }}
         className={`${sizes[size]} ${
           background
