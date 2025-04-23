@@ -5,7 +5,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
   message,
   description,
   label = "Okay",
-  onclick,
+  onClick,
   action = "none",
   children,
 }) => {
@@ -18,7 +18,7 @@ const EmptyState: React.FC<EmptyStateProps> = ({
       <RectButton
         label={label}
         variant={buttontype}
-        onClick={onclick}
+        onClick={onClick}
       />
     );
   };
