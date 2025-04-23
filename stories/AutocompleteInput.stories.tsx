@@ -17,6 +17,9 @@ const meta: Meta<typeof AutoComplete> = {
         Label: { control: "text" },
         Hint: { control: "text" },
         curved: { control: "boolean" },
+        defaultValue: { control: "text" },
+        input: { control: "object" },
+        placeholder: { control: "text" },
     },
 };
 
@@ -31,6 +34,7 @@ export const Default: Story = {
         State: "Default",
         input: ["Apple", "Banana", "Cherry", "Date", "Elderberry"],
         curved: false,
+        placeholder: "Select a fruit",
     },
 };
 
