@@ -13,11 +13,15 @@ import {
     CardWithMixedSections,
     LoadingCard,
 } from "@/components/Card";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Card> = {
     title: "Components/Card",
     component: Card,
     tags: ["autodocs"],
+    args: {
+        onClose: fn(),
+    },
 };
 
 export default meta;

@@ -12,7 +12,7 @@ const meta = {
         variant: { control: "radio", options: ["primary", "secondary"] },
         state: {
             control: "radio",
-            options: ["default", "pressed", "hover", "disabled", "loading"],
+            options: ["default", "pressed", "hover", "loading"],
         },
         size: {
             control: "radio",
@@ -54,7 +54,6 @@ export const Disabled: Story = {
         label: "Unavailable",
         variant: "primary",
         size: "medium",
-        state: "disabled",
         disabled: true,
     },
 };

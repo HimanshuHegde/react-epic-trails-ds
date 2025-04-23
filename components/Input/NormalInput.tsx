@@ -62,14 +62,14 @@ export default function NormalText({
   return (
     <div className="flex flex-col gap-2">
       {Label ? (
-        <div className="text-sm text-white">
+        <div className="text-sm text-gray-800">
           <text>{Label}</text>
         </div>
       ) : null}
       <div className={`relative ${Sizes[Size]} `}>
         <input
           {...props}
-          className={`bg-gray-50 p-[8px] placeholder:text-inputPlaceholder outline-none pr-[40px] border-[3px] ${State==="Disabled" && "cursor-not-allowed text-gray-300"} ${
+          className={`bg-gray-50 p-[8px] placeholder:text-gray-400 outline-none pr-[40px] border-[3px] ${State==="Disabled" && "cursor-not-allowed text-gray-300"} ${
             props.type == "file" && "hidden"
           } ${getBorderColor()} ${curved && "rounded-md"} ${Sizes[Size]} ${
             props.className
@@ -96,7 +96,7 @@ export default function NormalText({
         {props.type === "file" && (
           <label
             htmlFor={id}
-            className={`bg-gray-50 p-[8px] placeholder:text-inputPlaceholder outline-none  border-[3px] ${Sizes[Size]} ${getBorderColor()} ${
+            className={`bg-gray-50 p-[8px] placeholder:text-gray-400 outline-none  border-[3px] ${Sizes[Size]} ${getBorderColor()} ${
               curved && "rounded-md"
             } ${
               Sizes[Size]
@@ -147,7 +147,7 @@ export default function NormalText({
       </div>
       </div>
       {Hint ? (
-        <div className="text-sm text-inputHint text-white">
+        <div className="text-sm text-inputHint text-gray-800">
           <text>{Hint}</text>
         </div>
       ) : null}

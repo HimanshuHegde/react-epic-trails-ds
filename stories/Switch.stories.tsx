@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Switch } from "@/components/Switch";
 import { useState } from "react";
 import { Moon, Sunny } from "@/components/icons";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Switch> = {
   title: "Components/Switch",
@@ -13,6 +14,9 @@ const meta: Meta<typeof Switch> = {
     className: { control: "text" },
     onChange: { action: "toggled" },
   },
+  args:{
+    onChange: fn(),
+  }
 };
 
 export default meta;

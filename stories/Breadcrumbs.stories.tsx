@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumbs, BreadcrumbsItem } from "@/components/Breadcrumbs";
+import { fn } from "@storybook/test";
 
 const meta = {
     title: "Components/Breadcrumbs",
@@ -18,6 +19,9 @@ const meta = {
         },
         onGoBack: { action: "goBack" },
     },
+    args: {
+        onClick: fn(),
+    }
 } satisfies Meta<typeof Breadcrumbs>;
 
 export default meta;

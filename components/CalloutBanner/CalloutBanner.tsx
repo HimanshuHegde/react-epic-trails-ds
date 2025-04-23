@@ -23,7 +23,7 @@ const CalloutBanner= ({
   variant = 'default',
   className = '',
   theme="primary",
-  onClick =undefined,
+  onClick,
   ...props
 }: CalloutBannerProps) => {
   // Preset variants for easy styling

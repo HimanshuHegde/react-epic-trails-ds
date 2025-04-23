@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Pagination } from "@/components/Pagination";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Pagination> = {
     title: "Components/Pagination",
@@ -34,6 +35,9 @@ const meta: Meta<typeof Pagination> = {
             defaultValue: "primary",
         },
     },
+    args: {
+        onPageChange: fn(),
+    }
 };
 
 export default meta;

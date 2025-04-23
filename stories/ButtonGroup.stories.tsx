@@ -5,6 +5,7 @@ import {
     ChevronForward,
     CloudUpload,
 } from "./../components/icons/Icons";
+import { fn } from "@storybook/test";
 
 const meta = {
     title: "Components/ButtonGroup",
@@ -29,6 +30,10 @@ const meta = {
         contentButtonFunction: { action: "content button clicked" },
         iconButtonFunction: { action: "icon button clicked" },
     },
+    args: {
+        contentButtonFunction: fn(),
+        iconButtonFunction: fn(),
+    }
 } satisfies Meta<typeof ButtonGroup>;
 
 export default meta;

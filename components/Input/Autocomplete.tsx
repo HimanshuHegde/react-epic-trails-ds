@@ -69,7 +69,7 @@ export default function AutoComplete({
   return (
     <div className="flex flex-col gap-2 relative w-[375px]">
       {Label && (
-        <div className="text-sm text-white">
+        <div className="text-sm text-gray-800">
           <label htmlFor={inputId}>{Label}</label>
         </div>
       )}
@@ -81,7 +81,7 @@ export default function AutoComplete({
             id={inputId}
             className={`${
               Sizes[Size]
-            } p-[8px] placeholder:text-inputPlaceholder bg-gray-50 border-[3px] ${getBorderColor()} pr-[40px] outline-none flex-1 ${
+            } p-[8px] placeholder:text-gray-400 bg-gray-50 border-[3px] ${getBorderColor()} pr-[40px] outline-none flex-1 ${
               curved && "rounded-md "
             } ${props.className}`}
             disabled={props.disabled || 
@@ -163,7 +163,7 @@ export default function AutoComplete({
             <CheckmarkCircle size="16px" color="#22c55e" />
           )}
           <p
-            className={`text-white ${State === "Error" && "!text-contentNegative"} ${
+            className={`text-gray-800 ${State === "Error" && "!text-contentNegative"} ${
               State === "Success" && "!text-contentPositive"
             }`}
           >

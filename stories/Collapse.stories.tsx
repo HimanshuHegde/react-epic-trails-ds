@@ -1,6 +1,7 @@
 import React from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { Collapse } from "@/components/Collapse";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Collapse> = {
     title: "Components/Collapse",
@@ -15,6 +16,10 @@ const meta: Meta<typeof Collapse> = {
         actionFunction: { action: "actionFunction triggered" },
         children: { control: "text" },
     },
+    args: {
+        onChange: fn(),
+        actionFunction: fn(),
+    }
 };
 
 export default meta;

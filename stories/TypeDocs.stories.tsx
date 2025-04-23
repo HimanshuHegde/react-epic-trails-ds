@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { TypeDoc } from "@/components/Button";
+import { fn } from "@storybook/test";
 
 const meta = {
     title: "Components/TypeDoc",
@@ -23,6 +24,12 @@ const meta = {
         buttonLabel: { control: "text" },
         label: { control: "text" },
     },
+    args: {
+        buttonProps: {onClick: fn()},
+        checkboxProps: {onClick: fn(),
+            onChange: fn(),
+        },
+    }
 } satisfies Meta<typeof TypeDoc>;
 
 export default meta;

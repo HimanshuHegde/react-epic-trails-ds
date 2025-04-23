@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react";
 import { InputSelect } from "@/components/InputSelect";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof InputSelect> = {
     title: "Components/InputSelect",
@@ -29,6 +30,9 @@ const meta: Meta<typeof InputSelect> = {
         },
         onChange: { action: "changed" },
     },
+    args: {
+        onChange: fn()
+    }
 };
 
 export default meta;

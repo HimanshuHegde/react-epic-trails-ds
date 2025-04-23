@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 import { Slider } from "@/components/Slider";
 import React, { useState } from "react";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Slider> = {
     title: "Components/Slider",
@@ -13,6 +14,9 @@ const meta: Meta<typeof Slider> = {
         value: { control: "number" },
         onChange: { action: "changed" },
     },
+    args: {
+        onChange: fn()
+    }
 };
 
 export default meta;
