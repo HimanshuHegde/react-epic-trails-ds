@@ -59,7 +59,7 @@ export default function Collapse({
                             <u>{actionButtonLabel}</u>
                         </button>
                     )}
-                    <button onClick={toggleExpand} className="flex items-center">
+                    <button onClick={toggleExpand} className="flex items-center" aria-label={isOpen ? "Collapse" : "Expand"}>
                         {isOpen ? (
                             <ChevronUpOutline  />
                         ) : (
