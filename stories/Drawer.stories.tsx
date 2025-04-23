@@ -3,6 +3,7 @@ import type { Meta, StoryObj } from "@storybook/react";
 import { Drawer, DrawerPosition } from "@/components/Drawer";
 import { DrawerProvider, useDrawer } from "@/components/Drawer";
 import { RectButton } from "@/components";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Drawer> = {
     title: "Components/Drawer",
@@ -11,6 +12,9 @@ const meta: Meta<typeof Drawer> = {
     parameters: {
         layout: "centered",
     },
+    args:{
+        onClose: fn(),
+    }
 };
 
 export default meta;
