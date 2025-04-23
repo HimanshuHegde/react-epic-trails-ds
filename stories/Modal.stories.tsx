@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Modal, ModalHeader } from "@/components/Modal";
 import { RectButton } from "@/components/Button";
+import { fn } from "@storybook/test";
 
 const meta: Meta<typeof Modal> = {
     title: "Components/Modal",
@@ -20,6 +21,10 @@ const meta: Meta<typeof Modal> = {
         fixedFooter: { control: "boolean" },
         labelClose: { control: "text" },
     },
+    args:{
+        onClose: fn(),
+        onBack: fn(),
+    }
 };
 
 export default meta;
