@@ -14,7 +14,7 @@ type CardProps = CardBaseProps & {
     'with-expandable-sections' | 'with-controlled-and-uncontrolled' | 'with-controlled-with-controls' | 
     'with-default-expanded' | 'with-mixed-sections';
   defaultExpanded?: boolean;
-  onClose?: () => void;
+  onClose?: () => any;
   actions?: ReactNode;
   loading?: boolean;
 };
