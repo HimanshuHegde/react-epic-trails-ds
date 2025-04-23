@@ -38,6 +38,7 @@ const meta = {
             control: false,
         },
     },
+    
 } satisfies Meta<typeof Badge>;
 
 export default meta;
