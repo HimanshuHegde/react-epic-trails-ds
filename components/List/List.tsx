@@ -28,8 +28,8 @@ const spacingClasses = {
 };
 
 const typeClasses = {
-  primary: "text-white",
-  secondary: "text-gray-500",
+  primary: "text-black",
+  secondary: "text-gray-800",
 };
 
 export const List: React.FC<ListProps> = ({
