@@ -12,7 +12,7 @@ const meta = {
     variant: { control: 'radio', options: ['primary', 'secondary'] },
     size: { control: 'radio', options: ['fit', 'small', 'medium', 'large'] },
     icon: { control: 'radio', options: ['left', 'right'] },
-    state: { control: 'radio', options: ['default', 'pressed', 'hover', 'disabled', 'loading'] },
+    state: { control: 'radio', options: ['default', 'pressed', 'hover', 'loading'] },
     background: { control: 'color' },
     onClick: { action: 'clicked' },
   },
@@ -43,7 +43,6 @@ export const Disabled: Story = {
   args: {
     label: 'Disabled Button',
     disabled: true,
-    state: 'disabled',
   },
 };
 
