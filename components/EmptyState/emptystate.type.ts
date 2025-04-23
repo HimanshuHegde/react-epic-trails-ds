@@ -5,7 +5,7 @@ export interface EmptyStateProps {
   message: string;
   description?: string;
   label?: string;
-  onclick?: () => void;
+  onClick?: () => any;
   action?: ActionType;
   children?: ReactNode;
 }
