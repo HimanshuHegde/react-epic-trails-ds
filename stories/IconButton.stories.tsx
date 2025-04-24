@@ -63,7 +63,7 @@ export const Loading: Story = {
         label: "Loading...",
         variant: "secondary",
         size: "medium",
-        state: "loading",
+        state: "loading",   
     },
 };
 

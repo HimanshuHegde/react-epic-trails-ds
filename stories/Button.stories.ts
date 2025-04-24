@@ -48,7 +48,7 @@ export const Disabled: Story = {
 
 export const Loading: Story = {
   args: {
-    label: 'Loading...',
     state: 'loading',
+    label: 'Loading Button',
   },
 };

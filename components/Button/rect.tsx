@@ -25,6 +25,7 @@ const RectButton = ({
     default: "bg-buttons-primary-default",
     pressed: "bg-buttons-primary-pressed",
     hover: "bg-buttons-primary-hover",
+    disabled: "bg-buttons-primary-disabled",
     loading: "bg-buttons-primary-default",
   };
   
@@ -32,6 +33,7 @@ const RectButton = ({
     default: 'btn-secondary-default',
     pressed: 'btn-secondary-pressed',
     hover: 'btn-secondary-hover',
+    disabled: 'btn-secondary-disabled', 
     loading: 'btn-secondary-loading',
   };
   
@@ -47,12 +49,12 @@ const RectButton = ({
   return (
     <button
       {...props}
-      disabled={disabled}
+      disabled={state === "loading"? true : disabled}
       onMouseEnter={() => isHoverEffectEnabled && setIsHovered(true)} 
       onMouseLeave={() => isHoverEffectEnabled && setIsHovered(false)} 
       style={{ backgroundColor: background ? background : undefined }}
       aria-label={state==="loading"?"loading":""}
-      className={`${sizes[size]} relative flex items-center justify-center ${props.className}`}
+      className={`${sizes[size]} relative flex items-center justify-center ${props.className} `}
     >
       <div 
         className="absolute inset-0 z-0" 
@@ -62,9 +64,14 @@ const RectButton = ({
         }}
       >
         {!background && (
-          <div className={`absolute inset-0 ${ shouldApplyHoverEffect ? states.hover : states[state]}`}></div>
+          <div className={`absolute inset-0 ${ disabled ? states.disabled :shouldApplyHoverEffect ? states.hover : states[state]}`}></div>
         )}
       </div>
+        {state === "loading" && (
+          <div className=" flex items-center justify-center h-full">
+          <div className="w-4 h-4 border-2 border-gray-500 border-t-transparent rounded-full animate-spin" />
+        </div>
+        )}
       
       {state !== "loading" && (
         <span 
