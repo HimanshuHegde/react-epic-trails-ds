@@ -5,11 +5,11 @@ import { fn } from "@storybook/test";
 import EmptyStateIllustration from "@/components/EmptyState/EmptyStateIllustration";
 
 const meta: Meta<typeof EmptyState> = {
-    title: "Components/EmptyStates",
+    title: "Components/EmptyState",
     component: EmptyState,
     tags: ["autodocs"],
     argTypes: {
-        action: { control: false },
+        action: { control: "text", options: ["none", "primary", "secondary"] },
         children: { control: false },
         description: { control: "text" },
         label: { control: "text" },

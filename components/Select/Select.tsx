@@ -64,6 +64,7 @@ export const SelectTrigger = ({
             onClick={() => ctx.setIsOpen(!ctx.isOpen)}
             className={`flex items-center justify-between ${className} `}
             {...rest}
+            aria-label="select-expand"
         >
             <span className="flex items-center">
                 {children}

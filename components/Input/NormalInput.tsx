@@ -63,7 +63,7 @@ export default function NormalText({
     <div className="flex flex-col gap-2">
       {Label ? (
         <div className="text-sm text-gray-800">
-          <text>{Label}</text>
+          <label htmlFor={id}>{Label}</label>
         </div>
       ) : null}
       <div className={`relative ${Sizes[Size]} `}>
